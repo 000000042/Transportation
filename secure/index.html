@@ -1,44 +1,55 @@
     <html>  
-	        // insert style.css file inside index.html  
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="css/styleTest.css">
+        </html>
+
     <head>  
-        <title>SAJAD-T</title>  
+        <title>شرکت سجاد- ورودی</title>  
         <link rel = "stylesheet" type = "text/css" href = "style.css">   
     </head>  
-    <body>  
-        <div id = "frm">  
-            <h1>Login</h1>  
-            <form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
-                <p>  
-                    <label> UserName: </label>  
-                    <input type = "text" id ="user" name  = "user" />  
-                </p>  
-                <p>  
-                    <label> Password: </label>  
-                    <input type = "password" id ="pass" name  = "pass" />  
-                </p>  
-                <p>     
-                    <input type =  "submit" id = "btn" value = "Login" />  
-                </p>  
-            </form>  
-        </div>  
-        // validation for empty field   
+		<body>  
+			<div id = "frm">  
+				<h1><center>ورود به بخش داخلی شرکت سجاد</center></h1>  
+				<form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
+					<p>  <center>
+						<label> نام کاربر : </label>  
+						<input type = "text" id ="user" name  = "user" />  
+					</p>  </center>
+					<p>  <center>
+						<label> گذرواژه : </label>  
+						<input type = "password" id ="pass" name  = "pass" />  
+					</p>  </center>
+					<p>    <center>  
+						<input type =  "submit" id = "btn" value = "Login" />  
+					</p> </center>    
+				</form>  
+				<h3><center>
+					لازم به ذکر می باشد در صورت به یاد نداشتن گذر واژه یا نام کاربری خود با استفاده از بخش پل ارتباطی شرکت وبگاه معتبر شرکت اقدام نمایید
+				</center></h3>
+
+                
+        
         <script>  
                 function validation()  
                 {  
                     var id=document.f1.user.value;  
                     var ps=document.f1.pass.value;  
                     if(id.length=="" && ps.length=="") {  
-                        alert("User Name and Password fields are empty");  
+                        alert("نام وارده و یا رمز وارده صحیح نمیباشد");  
                         return false;  
                     }  
                     else  
                     {  
                         if(id.length=="") {  
-                            alert("User Name is empty");  
+                            alert("قسمت نام خالی می باشد");  
                             return false;  
                         }   
                         if (ps.length=="") {  
-                        alert("Password field is empty");  
+                        alert("قسمت گذرواژه خالی می باشد");  
                         return false;  
                         }  
                     }                             

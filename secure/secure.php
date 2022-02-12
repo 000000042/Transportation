@@ -4,9 +4,7 @@ $pass = $_POST['pass'];
 
 if($user == "admin"
 && $pass == "admin")
-{
-        include("secure.html");
-}
+
 else
 {
     if(isset($_POST))
