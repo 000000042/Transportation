@@ -57,8 +57,13 @@
 		<div class="nav-wrap js-tabs">
 			<ul class="nav">
                 <li class="nav__item"><a class="active" href="#about-tab">خانه</a></li>
+<<<<<<< Updated upstream
 				<li class="nav__item"><a href="#blog-tab">اطلاعات شرکت</a></li>
                 <li class="nav__item"><a href="#contact-tab">پل های ارتباطی</a></li>
+=======
+				<li class="nav__item"><a href="#blog-tab">درباره ما</a></li>
+                <li class="nav__item"><a href="#contact-tab">تماس با ما</a></li>
+>>>>>>> Stashed changes
 				<!--
 				<li class="nav__item"><a href="#driversreserve">driversreserver</a></li>
                 <li class="nav__item"><a href="https://sajadtransport/#">خرید اشتراک</a></li>
@@ -79,13 +84,19 @@
                         </svg>
 				    </div>
 				    <div class="text-center">
+<<<<<<< Updated upstream
 					    <h3 class="title sidebar__user-name"><span class="weight--500"> شرکت حمل و نقل سجاد</span> </h3>
 					    <div class="badge badge--gray">Sajad Transportations co</div>
+=======
+					    <h3 class="title sidebar__user-name"><span class="weight--500"> کارگروه بسته بندی ونوس</span> </h3>
+					    <div class="badge badge--gray">Venus Packing Group</div>
+>>>>>>> Stashed changes
 							
 					    <!-- Social -->
 
 		                <div class="social">
 		                    <!--
+<<<<<<< Updated upstream
 		                    <a class="social__link" data-toggle="tooltip" data-placement="top" title="Youtube" href="https://youtube.com/#"><i class="font-icon icon-youtube"></i></a>
 		                    -->
 		                    <a class="social__link" data-toggle="tooltip" data-placement="top" title="Instagram" href="https://www.instagram.com/#"><i class="font-icon icon-instagram"></i></a>
@@ -102,6 +113,17 @@
 					<ul class="contact-block">
 					    <li class="contact-block__item" data-toggle="tooltip" data-placement="top" title=<"ورود به بخش اعلام بار">
 						    <a class="btn" href="http://localhost/sajadtransport/#" style="color:white;">ورود به بخش اعلام بار</a>
+=======
+		                    <a class="social__link" data-toggle="tooltip" data-placement="top" title="Youtube" href="https://www.youtube.com/channel/UCf6D4zQFKTo5pLwRqVFX7ag"><i class="font-icon icon-youtube"></i></a>
+		                    -->
+		                    <a class="social__link" data-toggle="tooltip" data-placement="top" title="Instagram" href="https://www.instagram.com/"><i class="font-icon icon-instagram"></i></a>
+		                </div>
+				    </div>
+
+				    <ul class="contact-block">
+					    <li class="contact-block__item" data-toggle="tooltip" data-placement="top" title="ارسال ایمیل">
+						    <a class="btn" href="mailto: info@venuspack.ir" style="color:white;">ارسال ایمیل</a>
+>>>>>>> Stashed changes
 					    </li>
 				    </ul>
 				    
@@ -116,6 +138,7 @@
 				    <div id="about" class="section mt-0">
 		                <div class="alert alert-primary" >
 							<span class="spinner-grow ml-1" style="width: 1.5rem;height: 1.5rem;animation: spinner-grow 1s linear infinite;"></span>
+<<<<<<< Updated upstream
 							<span id="status">سایت مرجعه در دست توسعه می باشد ، برای تماس با سما به بخش پل ارتباطی  مراجعه کنید. </span>
 						</div>
 						<hr>
@@ -125,6 +148,20 @@
 							متن قابل اضافه کردن جهت توضیحات صفحه خانه
 							</p><p>
 
+=======
+							<span id="status">بسته بندی انواع پک های هواپیمایی و رستورانی</span>
+						</div>
+						<hr>
+		                <h1 class="title title--h1 title__separate"> درباره ما</h1>
+					    <div class="pt-2 pt-sm-3">
+							<p>
+							تهییه انواع پک های هواپیمایی و رستورانی با اشکال و سایز های متفاوت
+							</p><p>
+همچنین شما میتوانید برای بالا بردن سطح سرویس خدماتی خود از پک های اختصاصی خود بهره مند شوید
+</p><p>
+تیم توسعه ما همیشه به دنبال ارائه ویژگی های منحصر به شما به صورت های مختلف میباشد فلذا شما میتوانید هم اکنون برای تنظیم سفارش خود و یا اطلاعات بیشتر با شماره زیر ارتباط بر قرار کنید 
+							</p>
+>>>>>>> Stashed changes
 						</div>
 				    </div>
 						
@@ -135,8 +172,13 @@
 						    <!-- Case Item -->
 						    <div class="col-12 col-lg-6 case-item-wrap">
 							    <div class="case-item">
+<<<<<<< Updated upstream
 								    <h3 class="title title--h3">ااز سال 1342 خدمتگزار شما بودیم</h3>
 								    <p class="case-item__caption">متن قابل افتخار بابت دوره قدمت شرکت</p>
+=======
+								    <h3 class="title title--h3">از 95 تا به حال با شما هستیم ! </h3>
+								    <p class="case-item__caption"> تیم ما با داشتن بالا 5 سال سابقه فعالیت توانسته   جهت رشد و حفظ بهداشت فردی . اجتمای صنعتی خدمات ارعه دهد و ما من باب این مسئله مفتخریم !! </p>
+>>>>>>> Stashed changes
 							    </div>
 						    </div>
 								
@@ -144,24 +186,38 @@
 						    <div class="col-12 col-lg-6 case-item-wrap">
 							    <div class="case-item">
 								    <h3 class="title title--h3">کیفیت هدف ماست !</h3>
+<<<<<<< Updated upstream
 								    <p class="case-item__caption"></p></p>حساسیت در حمل و نقل وظیفه ی ماست  </p>
+=======
+								    <p class="case-item__caption"></p></p> بنا به نوع جنس بسته بندی شما و تعداد رنگ های شما ما میتوانیم کیفیت بالایی رو به شما اختصاص بدهیم ، همچنین قاشق چنگال های پک های ما از انواع مختلفی میباشد که میتوانید رنج انتخاب گسترده ای داشته باشید !</p>
+>>>>>>> Stashed changes
 							    </div>
 						    </div>
 								
 						    <!-- Case Item -->
 						    <div class="col-12 col-lg-6 case-item-wrap">
 							    <div class="case-item">
+<<<<<<< Updated upstream
 								    <h3 class="title title--h3">صدور بارنامه و بینمه نامه سریع</h3>
 								    <p class="case-item__caption">تیم کارکشته ما در مازندران حرف اخر را برای صدور بارنامه و بیمه نامه خواهند زند </p>
 									<p></p>
 									
+=======
+								    <h3 class="title title--h3">انتخاب گسترده</h3>
+								    <p class="case-item__caption">بنا به نوع جنس بسته بندی شما و تعداد رنگ های شما ما میتوانیم کیفیت بالایی رو به شما اختصاص بدهیم ، همچنین قاشق چنگال های پک های ما از انواع مختلفی میباشد که میتوانید رنج انتخاب گسترده ای داشته باشید !</p>
+>>>>>>> Stashed changes
 							    </div>
 						    </div>
 						    <!-- Case Item -->
 						    <div class="col-12 col-lg-6 case-item-wrap">
 							    <div class="case-item">
 								    <h3 class="title title--h3">به کارمند نیازمندیم !</h3>
+<<<<<<< Updated upstream
 								    <p class="case-item__caption">در صورت تمایل میتوانید فرم استخدامی را پر کرده و منتظر تماس از شرکت باشید و یا برای اطلاعات بیشتر به بخش پل ارتباطی مراجعه کنید</p>
+=======
+								    <p class="case-item__caption">برای اطلاعات بیشتر جهت استخدام با شماره زیر تماس برقرار کنید . 
+								    0911-5566-042</p>
+>>>>>>> Stashed changes
 							    </div>
 						    </div>
 					    </div>	
@@ -169,7 +225,11 @@
 				
 				    <!-- Testimonials -->
 				    <div class="section">
+<<<<<<< Updated upstream
 					    <h2 class="title title--h2 title__separate">طرف قرارداد های شرکت حمل و نقل سجاد:</h2>
+=======
+					    <h2 class="title title--h2 title__separate">مشتری های ما در حال حاضر:</h2>
+>>>>>>> Stashed changes
 					    <div class="swiper-container js-carousel-review">
                             <div class="swiper-wrapper">
 						        <!-- Item review -->
@@ -181,9 +241,15 @@
                                             <image loading="lazy"  xlink:href="./assets/img/avatar-1.png" height="100%" width="100%" />
                                         </g>
                                     </svg>
+<<<<<<< Updated upstream
 								    <h4 class="title title--h3">شرکت حمل و نقل نوبخت</h4>
 							    	<p class="review-item__caption">
 										شریک اداری در زمینه حمل و نقل
+=======
+								    <h4 class="title title--h3">اکبر جوجه مرکزی ساری</h4>
+							    	<p class="review-item__caption">
+
+>>>>>>> Stashed changes
 									</p>
 							    </div>
 								 
