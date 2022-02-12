@@ -1,27 +1,28 @@
 $(document).ready(function() {
-
     function updateStatus(){
          $.ajax({
             type: "GET",
-            url: "https://lossantos.ir/status.php",
+            url: "https://localhost/status.php",
             success: function(data){
                 var num = parseInt(data);
                 if ( num > 0 ){
-                    $("#status").html("تیم استف لوس‌سان‌توس به همراه " + num + " پلیر منتظر حضور شما در سرور می باشد.<a class=\"btn mr-3\" href=\"fivem://connect/sv.lossantos.ir\" style=\"color:white;\">ورود به سرور</a>"
+                    $("#status").html("منتظر شما هستیم " + num + " منتظر شما هستیم.<a class=\"btn mr-3\" href=\"fivem://connect/sv.lossantos.ir\" style=\"color:white;\">ورود به سرور</a>"
                     ).parent().removeClass('alert-primary').removeClass('alert-danger').addClass('alert-success');
                 } else if ( num == 0 ){
-                     $("#status").html("تیم استف لوس‌سان‌توس منتظر حضور شما در سرور می باشد.<a class=\"btn mr-3\" href=\"fivem://connect/sv.lossantos.ir\" style=\"color:white;\">ورود به سرور</a>").parent().removeClass('alert-primary').removeClass('alert-danger').addClass('alert-success');
+                     $("#status").html("منتظر شما هستیم<a class=\"btn mr-3\" href=\"fivem://connect/sv.lossantos.ir\" style=\"color:white;\">ورود به سرور</a>").parent().removeClass('alert-primary').removeClass('alert-danger').addClass('alert-success');
                 } else {
-                     $("#status").html("متاسفانه به دلیل مشکلات فنی، سرور برای مدت محدود در دسترس نمی باشد!").parent().removeClass('alert-primary').removeClass('alert-success').addClass('alert-danger');
+                     $("#status").html("منتظر شما هستیم").parent().removeClass('alert-primary').removeClass('alert-success').addClass('alert-danger');
                     
                 }
             },
+            
             error: function(error){
                  console.log("Error:");
                  console.log(error);
             }
         });
     }
+    
     /*--
     // Set the date we're counting down to
     var countDownDate = new Date("June 11, 2021 21:57:42").getTime();
@@ -118,13 +119,12 @@ $(document).ready(function() {
     /*-----------------------------------------------------------------
       Hamburger
     -------------------------------------------------------------------*/
-
+    
     $('.hamburger').on('click', function() {
         $(this).toggleClass('is-active');
 	    $('.inner-menu').toggleClass('is-active');
 		$('body').toggleClass('open-menu');
     });
-	
 	
     /*-----------------------------------------------------------------
       Carousel
