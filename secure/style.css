@@ -27,4 +27,21 @@
   white-space: nowrap;
   z-index: 1;
 } 
+.body-left-side {
+  background-color: #44566C;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 0.5rem 1rem rgba(48, 76, 253, 0.15), 0 0.125rem 0.25rem rgba(48, 76, 253, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: inherit;
+  overflow: hidden;
+  padding: 0.9375rem 1.5rem;
+  position: relative;
+  transition: .4s ease-in-out;
+  white-space: nowrap;
+  z-index: 1;
 
+}

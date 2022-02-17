@@ -14,43 +14,45 @@
 
 
 <body>
-    <div class="wrapper side-panel-open">
+    <!--list of btn-->
+        <div class="wrapper side-panel-open">
 
-        <div class="main">
+            <div class="main">
+                <!--leb-admin-->
+                    <iframe class="leb-admin" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoPIIcDiXJT77sE6cYB8QZn7XBjKqrhss-1GNG_zubZuSwNTdDTeGCzKCpHTLBeOxK9i0XdBRvWOow/pubhtml?gid=1445673192&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
-            <!--
-            <iframe style="height: 100%;" , width="100%" src="https://docs.google.com/document/d/e/2PACX-1vRdc6OJXKouRX1WdfjhKsSESKGrxttOUZWTZhd1amGwTMqIKzZU2g5k9krWW8xSvSiuf4IB_fTYkIqR/pub">
-            </iframe>
-            -->
+            </div>
+            <button class="side-panel-toggle" type="button">
+                <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>
+                <span class="material-icons sp-icon-close">keyboard_double_arrow_right</span>
+            </button>
+            
+            <div class="side-panel">
+
+                <a class="button" href="localhost/#" style="color:white;">انجمن کارکنان شرکت</a>
+                    <div class="space"></div>
+                <a class="button" href="localhost/#" style="color:white;">لیست اعلام بار</a>
+                    <div class="space"></div>
+                <a class="button" href="localhost/#" style="color:white;">لیست رانندگان</a>
+                    <div class="space"></div>
+                <a class="button" href="localhost/#" style="color:white;">ثبت اعلام بار</a>
+                    <div class="space"></div>
+                <a class="button" href="localhost/#" style="color:white;">رزور رانندگان</a>
+                    <div class="space"></div>
+
+                </li>
+            </div>
         </div>
-        <button class="side-panel-toggle" type="button">
-            <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>
-            <span class="material-icons sp-icon-close">keyboard_double_arrow_right</span>
-        </button>
-        <div class="side-panel">
-
-            <a class="button" href="localhost/#" style="color:white;">انجمن کارکنان شرکت</a>
-                <div class="space"></div>
-            <a class="button" href="localhost/#" style="color:white;">لیست کامل اعلام بار ها</a>
-                <div class="space"></div>
-            <a class="button" href="localhost/#" style="color:white;">لیست کامل رانندگان</a>
-                <div class="space"></div>
-
-            </li>
-        </div>
-    </div>
-    <script>
-        document.querySelector(".side-panel-toggle").addEventListener("click", () => {
-            document.querySelector(".wrapper").classList.toggle("side-panel-open");
-        });
-    </script>
-
+        <script>
+            document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+                document.querySelector(".wrapper").classList.toggle("side-panel-open");
+            });
+        </script>
 </body>
 <footer>
 
-    <div class=".footer">
-        <p> Copy right : Hossein Banaei</p>
-        <p><a href="mailto:hossein711@gmail.com">Send Me a Debug program</a></p>
+    <div class="footer">
+        <p><img src="http://localhost/sajadtransport/usersection/img/favicon.png" alt=""></p>
 
     </div>
 </footer>
