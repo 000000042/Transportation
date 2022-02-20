@@ -19,7 +19,7 @@
                 echo "<h1><center> ورود شما در شرکت حمل و نقل سجاد موفقیت آمیز بود </center></h1>";
 				echo "<h1><center><input type='submit' name='btn' value='انتقال به صفحه جدید'></h1></center>";
 				
-				header('Location: ..\usersection\pwlbhosseinbanaei\pwvs\zx\index.html');
+				header('Location: ..\usersection');
 				exit();
             }  
             else{  
