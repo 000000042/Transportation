@@ -180,3 +180,71 @@ footer {
     background-color: #FAEBD7;
 
 }
+
+.btn42 {
+    background-color:#c62c2c;
+    width:200;
+    height:60px;
+    margin:0 auto;
+    vertical-align: middle;
+    text-align:center;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration:wavy;
+    outline: none;
+    color: #fff;
+    border: none;
+    box-shadow: 0 9px #999;
+  }
+  
+  .btn42:hover {
+      background-color: #FF965D;
+      transition-duration: 1s;    
+    }
+  
+  .btn42:active {
+    background-color: #FF965D;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .space {
+      height: 25px;
+  }
+
+.btn32 {
+    background-color:#c62c2c;
+    width:200;
+    height:60px;
+    margin:0 auto;
+    vertical-align: middle;
+    text-align:center;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration:wavy;
+    outline: none;
+    color: #fff;
+    border: none;
+    box-shadow: 0 9px #999;
+}
+  
+.btn32:hover {
+      background-color: #FF965D;
+      transition-duration: 1s;    
+    }
+  
+.btn32:active {
+    background-color: #FF965D;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.space {
+      height: 25px;
+}
+
+
