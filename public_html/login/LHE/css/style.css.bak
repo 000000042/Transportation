@@ -141,8 +141,8 @@ footer {
 
 .button {
     background-color:#de8212;
-    width:200px;
-    height:42px;
+    width:200;
+    height:60px;
     margin:0 auto;
     vertical-align: middle;
     text-align:center;
@@ -183,8 +183,8 @@ footer {
 
 .btn42 {
     background-color:#c62c2c;
-    width:200px;
-    height:42px;
+    width:200;
+    height:60px;
     margin:0 auto;
     vertical-align: middle;
     text-align:center;
@@ -216,8 +216,8 @@ footer {
 
 .btn32 {
     background-color:#c62c2c;
-    width: 200px;
-    height: 42px;
+    width:200;
+    height:60px;
     margin:0 auto;
     vertical-align: middle;
     text-align:center;
