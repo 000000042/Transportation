@@ -20,7 +20,7 @@
 				echo "<h1><center><input type='submit' name='btn' value='انتقال به صفحه جدید'></h1></center>";
 				session_start();
         $_SESSION["loggedinuser"] = $username;
-				header('Location: ..\usersection\pwlbhosseinbanaei\pwvs\zx\index.html');
+				header('Location: http://localhost/sajadtransport/public_html/login/LHE/pwlbhosseinbanaei/pwvs/zx');
 				exit();
             }
             else{
