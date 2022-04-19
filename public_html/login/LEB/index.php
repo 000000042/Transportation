@@ -33,14 +33,26 @@ function get_result()
         <span class="material-icons sp-icon-close">keyboard_double_arrow_right</span>
       </button>
       <div class="side-panel">
-        <a class="button" href="http://localhost/sajadtransport/usersection/" style="color:white;">لیست اعلام بار</a>
+        <!--ntbc-->
         <div class="space"></div>
-        <a class="button" href="../UDRL/" style="color:white;">لیست رانندگان</a>
-        <div class="space"></div>
-        <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdCdmLQLKt1aUetRcUFndy3SvB6m0-Cwqma99G5A0MDH1e2zQ/viewform" style="color:white;">ثبت اعلام بار</a>
-        <div class="space"></div>
-        <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeYx_XlwA19vI-LCK03pk8Z1XEAmY-zVrBC2FUPMigwiICbIg/viewform" style="color:white;">رزور رانندگان</a>
-        <div class="space"></div>
+        <a class="button" href="http://localhost/sajadtransport/public_html/login/LHE" style="color:white;">لیست حواله بارگیری</a>
+            <div class="space"></div>
+        <a class="button" href="http://localhost/sajadtransport/public_html/login/LEB" style="color:white;">لیست رزرو رانندگان</a>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+        <a class="btn42" href="https://docs.google.com/forms/d/10klhGhrU-HnCSVKz-4sx61yOlbbXMHNLqflvIbTRrC4/edit?usp=sharing" style="color:white;">ثبت حواله بارگیری</a>
+            <div class="space"></div>
+        <a class="btn42" href="https://docs.google.com/forms/d/e/1FAIpQLSeYx_XlwA19vI-LCK03pk8Z1XEAmY-zVrBC2FUPMigwiICbIg/viewform" style="color:white;">رزرو راننده</a>
+            <div class="space"></div>
+
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+        <a class="btn32" href="http://localhost/sajadtransport/public_html/login/LHE/logout.php" style="color:white;">خروج از پنل کاربری</a>
+
       </div>
     </div>
     <script>
