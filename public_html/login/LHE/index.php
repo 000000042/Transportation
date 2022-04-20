@@ -34,7 +34,7 @@ function get_result()
                     <!--
                         <iframe class="leb-admin" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoPIIcDiXJT77sE6cYB8QZn7XBjKqrhss-1GNG_zubZuSwNTdDTeGCzKCpHTLBeOxK9i0XdBRvWOow/pubhtml?gid=1445673192&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
                             -->
-                        <iframe class="leb-admin" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoPIIcDiXJT77sE6cYB8QZn7XBjKqrhss-1GNG_zubZuSwNTdDTeGCzKCpHTLBeOxK9i0XdBRvWOow/pubhtml?gid=1129057047&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                        <iframe class="leb-admin" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoPIIcDiXJT77sE6cYB8QZn7XBjKqrhss-1GNG_zubZuSwNTdDTeGCzKCpHTLBeOxK9i0XdBRvWOow/pubhtml?gid=1129057047&single=true"></iframe>
                 </div>
                 <button class="side-panel-toggle" type="button">
                     <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>
