@@ -1,2 +1,1 @@
-allright so in this section theres Diffrent kind of things 
-    - 
+All rights reserved , Contact me@Mhossein.com
