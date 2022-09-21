@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'B Nazanin';
+	src: url(../../assets/fonts/BNazanin.woff2?h=4d1423b308cc44cf2dc0c17514339281) format('woff2'),
+	url(../../assets/fonts/BNazanin.woff?h=4d1423b308cc44cf2dc0c17514339281) format('woff'),
+	url(../../assets/fonts/BNazanin.ttf?h=4d1423b308cc44cf2dc0c17514339281) format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: 'B Nazanin';
+	src: url(../../assets/fonts/BNaznnBd.woff2?h=4d1423b308cc44cf2dc0c17514339281) format('woff2'),
+	url(../../assets/fonts/BNaznnBd.woff?h=4d1423b308cc44cf2dc0c17514339281) format('woff'),
+	url(../../assets/fonts/BNaznnBd.ttf?h=4d1423b308cc44cf2dc0c17514339281) format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: auto;
+}
