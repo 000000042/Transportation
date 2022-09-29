@@ -1,0 +1,54 @@
+﻿@model SignContractViewModel
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-page="AddContract" asp-page-handler="SignContract" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CargoType" class="control-label"></label>
+                <input asp-for="CargoType" class="form-control" />
+                <span asp-validation-for="CargoType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>راننده</label>
+                <select class="form-control" asp-for="DriverId" asp-items="@Model.Drivers" style="cursor:pointer;"></select>
+                <span asp-validation-for="DriverId"></span>
+            </div>
+            <div class="form-group">
+                <label>متصدی</label>
+                <select class="form-control" asp-for="ContractorId" asp-items="@Model.Contractors" style="cursor:pointer;"></select>
+                <span asp-validation-for="ContractorId"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beginning" class="control-label"></label>
+                <input asp-for="Beginning" class="form-control" />
+                <span asp-validation-for="Beginning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destination" class="control-label"></label>
+                <input asp-for="Destination" class="form-control" />
+                <span asp-validation-for="Destination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverFee" class="control-label"></label>
+                <input asp-for="DriverFee" class="form-control" />
+                <span asp-validation-for="DriverFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecievedRemittance" class="control-label"></label>
+                <input asp-for="RecievedRemittance" class="form-control" />
+                <span asp-validation-for="RecievedRemittance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت حواله" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

@@ -1,0 +1,73 @@
+﻿@model Transportation.Core.DTOs.AccountDTO.DriverRegisterViewModel
+
+@{
+    ViewData["Title"] = "ثبت نام راننده";
+}
+
+<h1 class="text-center">ثبت نام راننده</h1>
+
+<hr />
+<div class="col-md-12 row">
+    <form asp-action="RegisterDriver" asp-controller="Account" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="NationalCode" class="control-label"></label>
+            <input asp-for="NationalCode" class="form-control" />
+            <span asp-validation-for="NationalCode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SmartDriverCode" class="control-label"></label>
+            <input asp-for="SmartDriverCode" class="form-control" />
+            <span asp-validation-for="SmartDriverCode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TruckFleetCode" class="control-label"></label>
+            <input asp-for="TruckFleetCode" class="form-control" />
+            <span asp-validation-for="TruckFleetCode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TruckType" class="control-label"></label>
+            <input asp-for="TruckType" class="form-control" />
+            <span asp-validation-for="TruckType" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IdentificationCard" class="control-label"></label>
+            <input type="file" asp-for="IdentificationCard" class="form-control" />
+            <span asp-validation-for="IdentificationCard" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FacePicture" class="control-label"></label>
+            <input type="file" asp-for="FacePicture" class="form-control" />
+            <span asp-validation-for="FacePicture" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="ثبت نام" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

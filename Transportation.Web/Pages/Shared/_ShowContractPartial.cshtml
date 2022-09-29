@@ -1,0 +1,36 @@
+﻿@model ContractSign
+<div class="panel panel-primary" id="printable-section">
+    <div class="panel-heading">
+        حواله ی ثبت شده
+    </div>
+    <div class="panel-body" id="main-content">
+        <img class="img-thumbnail" src="~/AdminContent/Contracts/img/sign-contact.png" />
+        <div class="row">
+                    <div class="col-md-6">
+            <h2>نام متصدی : @(Model.Announce.Contractor.FirstName + " " + Model.Announce.Contractor.LastName)</h2>
+            <h2>نام راننده : @(Model.Request.Driver.FirstName + " " + Model.Request.Driver.LastName) </h2>
+            <h3>نوع بار : @Model.Announce.CargoType </h3>
+            <h3>مبدا : @Model.Announce.Beginning </h3>
+            <h3>مقصد : @Model.Announce.Destination </h3>
+        </div>
+        <div class="col-md-6">
+            <h3>صافی راننده : @Model.Announce.DriverFee </h3>
+            <h3>حواله ی دریافتی : @Model.RecievedRemittance </h3>
+        </div>
+        </div>
+        <div class="col-md-12">
+                    <h3>تاریخ ثبت : @Model.SignDate.PersianDateTime() </h3>
+        </div>
+    </div>
+    <div class="panel-footer">
+        @if (Model.IsDelete)
+        {
+                <a class="btn-primary btn">لغو ابطال</a>
+        }
+
+        <button class="btn btn-success" id="print-btn" onclick="PrintPdf()">پرینت</button>
+    </div>
+</div>
+
+
+    <script src="~/AdminContent/js/contractjs/printPdf.js"></script>

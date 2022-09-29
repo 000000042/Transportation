@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <div style="text-align:center;">
+    <h2>
+    Welcome to our transportation Website!
+</h2>
+<h3>
+    To do anything in this website, please first login.
+</h3>
+    </div>
+                <div class="text-center mt-4" id="partialBody">
+                    <a class="btn btn-success btn-lg" asp-controller="Account" asp-action="Login">
+                        Login
+                    </a>
+                </div>
+</div>
+
+<button class="btn btn-primary" id="generateBtn">Generate Pdf</button>
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.es.min.js" integrity="sha512-3chOMtjYaSa9m2bCC8qGxmEcX449u63D1fMXMQdueS3/XgE12iHQdmZVXVVbhBLc9i7h9WUuuM15B0CCE6Jtvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+    </script>
+}

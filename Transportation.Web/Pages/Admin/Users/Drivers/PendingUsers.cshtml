@@ -1,0 +1,86 @@
+﻿@page
+@model Transportation.Web.Pages.Admin.Users.Drivers.PendingUsersModel
+@{
+}
+<h1>
+    لیست رانندگان در انتظار تایید
+</h1>
+<hr />
+
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer">
+    <thead>
+        <tr>
+            <th>نام کاربری</th>
+            <th>ایمیل</th>
+            <th>تاریخ ساخت</th>
+            <th>نوع کاربر</th>
+            <th>دستورات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.RegisterDate.PersianDateTime()</td>
+                <td>
+                    @if (user.UserType == UserTypes.Driver.ToString())
+                    {
+                        <p>راننده</p>
+                    }
+                    else
+                    {
+                        <p>شرکت</p>
+                    }
+                </td>
+                <td>
+                    @if (user.UserType == UserTypes.Driver.ToString())
+                    {
+                        <a class="btn btn-warning" onclick="Approve(@user.UserId)">
+                            نمایش بیشتر
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-warning" onclick="Approve(@user.UserId)">
+                            نمایش بیشتر
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">تایید کردن کاربر</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+        function Approve(id){
+            console.log(id);
+        var url = "https://localhost:44377/Admin/Users/Drivers/ApproveUser/" + id;
+        console.log(url);
+      $('#modalBody').load(url,function(){
+  $('#exampleModalCenter').modal('toggle');
+    });
+        }
+    </script>
+}

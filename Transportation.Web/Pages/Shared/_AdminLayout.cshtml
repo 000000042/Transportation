@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پنل مدیریت سایت</title>
+    <partial name="_AdminStyles" />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Admin">Transportation</a>
+                @if (Context.Request.Cookies.Any(c => c.Key == "Admin.Auth"))
+                {
+                <a class="navbar-brand" onclick="LogOut()">Logout</a>
+                }
+            </div>
+                @if (Context.Request.Cookies.Any(c => c.Key == "Admin.Auth"))
+                {
+                    <!-- /.navbar-header -->
+                    <div class="navbar-default navbar-static-side" role="navigation">
+                        <div class="sidebar-collapse">
+                            <ul class="nav" id="side-menu">
+                                <li class="sidebar-search">
+                                    <div class="input-group custom-search-form">
+                                        <input type="text" class="form-control" placeholder="Search...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <!-- /input-group -->
+                        </li>
+                                <li>
+                                    <a href="/Admin"><i class="fa fa-dashboard fa-fw"></i> پنل ادمین</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> مدیریت کاربران<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level">
+                                        <li>
+                                            <a href="flot.html">دسترسی ها</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Admin/Users">کاربران</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Admin/Users/DeletedUsers">کاربران حذف شده</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                        </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>مدیریت حواله ها<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level">
+                                        <li>
+                                            <a href="/Admin/Contracts/">حواله ها</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Admin/Contracts/DeletedContracts">حواله های ابطال شده</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                            </ul>
+                            <!-- /#side-menu -->
+                </div>
+                        <!-- /.sidebar-collapse -->
+            </div>
+                }
+
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            @RenderBody()
+        </div>
+        <!-- /#page-wrapper -->
+        <!-- modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="modalLogout">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">خروج از حساب</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+
+    </div>
+    <!-- /#wrapper -->
+    @RenderSection("Modals", false)
+    <partial name="_AdminScripts" />
+    @RenderSection("Scripts", false)
+    <script>
+        function LogOut(){
+        var url = "https://localhost:44377/Admin/LogOut";
+        console.log(url);
+      $('#modalBody').load(url,function(){
+  $('#modalLogout').modal('toggle');
+    });
+        }
+    </script>
+</body>
+
+</html>

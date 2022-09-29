@@ -1,0 +1,88 @@
+﻿@page
+@model Transportation.Web.Pages.Admin.Contracts.IndexModel
+@{
+}
+
+<h1>
+    حواله ها
+</h1>
+<hr />
+<div class="col-md-12" id="main-content">
+    <a class="btn btn-success btn-lg" onclick="AddContract()">ثبت حواله</a>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>نوع بار</th>
+                <th>مبدا</th>
+                <th>مقصد</th>
+                <th>تاریخ ثبت</th>
+                <th>دستورات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contract in Model.Contracts)
+            {
+                <tr>
+                    <td>@contract.CargoType</td>
+                    <td>@contract.Beginning</td>
+                    <td>@contract.Destination</td>
+                    <td>@contract.SignDate.PersianDateTime()</td>
+                    <td>
+                        <a class="btn btn-warning" onclick="ShowContract(@contract.ContractId)">مشاهده</a>
+                        <a class="btn btn-danger" href="/Admin/Contracts/DeleteContract">ابطال</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+<script>
+     function ShowContract(id){
+              console.log(id);
+          var url = "https://localhost:44377/Admin/Contracts/ShowContract/" + id;
+          console.log(url);
+        $('#modalBody').load(url,function(){
+    $('#exampleModalCenter').modal('toggle');
+      });
+            $('#exampleModalLongTitle').html("حواله ی شماره ی " + id);
+          }
+
+               function AddContract(){
+          var url = "https://localhost:44377/Admin/Contracts/AddContract/";
+          console.log(url);
+        $('#modalBody').load(url,function(){
+    $('#exampleModalCenter').modal('toggle');
+      });
+      $('#exampleModalLongTitle').html("ثبت حواله");
+          }
+
+               function DeleteContract(id){
+              console.log(id);
+          var url = "https://localhost:44377/Admin/Contracts/DeleteContract/" + id;
+          console.log(url);
+        $('#modalBody').load(url,function(){
+    $('#exampleModalCenter').modal('toggle');
+      });
+          }
+</script>
+}

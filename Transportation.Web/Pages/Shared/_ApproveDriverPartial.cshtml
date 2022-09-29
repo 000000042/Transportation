@@ -1,0 +1,63 @@
+﻿@model Driver
+
+<div class="col-md-12">
+    <div class="row">
+        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Drivers/IdentificationCards/@Model.IdentificationCard" />
+        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Drivers/FacePictures/@Model.FacePicture" />
+    </div>
+    <div>
+        <input type="hidden" asp-for="UserId" />
+        <table class="table table-striped table-bordered table-hover dataTable no-footer">
+            <thead>
+                <tr>
+                    <th>اطلاعات خواسته شده</th>
+                    <th>اطلاعات کاربر</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>نام کاربری</td>
+                    <td>@Model.User.UserName</td>
+                </tr>
+                <tr>
+                    <td>ایمیل</td>
+                    <td>@Model.User.Email</td>
+                </tr>
+                <tr>
+                    <td>شماره تلفن</td>
+                    <td>@Model.PhoneNumber</td>
+                </tr>
+                <tr>
+                    <td>نام</td>
+                    <td>@Model.FirstName</td>
+                </tr>
+                <tr>
+                    <td>نام خانوادگی</td>
+                    <td>@Model.LastName</td>
+                </tr>
+                <tr>
+                    <td>کد ملی</td>
+                    <td>@Model.NationalCode</td>
+                </tr>
+                <tr>
+                    <td>کد هوشمند راننده</td>
+                    <td>@Model.SmartDriverCode</td>
+                </tr>
+                <tr>
+                    <td>کد ناوگان کامیون</td>
+                    <td>@Model.TruckFleetCode</td>
+                </tr>
+                <tr>
+                    <td>نوع کامیون</td>
+                    <td>@Model.TruckType</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+            <a class="btn btn-danger" asp-page-handler="DeclineUser" asp-route-id="@Model.UserId">
+                Decline
+            </a>
+            <a class="btn btn-success" asp-page-handler="AcceptUser" asp-route-id="@Model.UserId">
+                Accept
+            </a>
+</div>

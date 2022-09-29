@@ -1,0 +1,12 @@
+﻿@model User
+
+<h1>کاربر @Model.UserName گرامی</h1>
+
+@if (Model.IsActive && !Model.IsDelete)
+{
+    <p>حساب شما تایید شد و از این پس می توانید به حساب خود وارد شوید.</p>
+}
+@if (Model.IsDelete && !Model.IsActive)
+{
+    <p>حساب شما به دلیل ناقص بودن/کامل نبودن اطلاعات تایید نشد.</p>
+}

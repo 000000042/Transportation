@@ -1,0 +1,15 @@
+E:\C#\Projects\TransportationProject\Transportation.Core\bin\Debug\net6.0\Transportation.Core.deps.json
+E:\C#\Projects\TransportationProject\Transportation.Core\bin\Debug\net6.0\Transportation.Core.dll
+E:\C#\Projects\TransportationProject\Transportation.Core\bin\Debug\net6.0\Transportation.Core.pdb
+E:\C#\Projects\TransportationProject\Transportation.Core\bin\Debug\net6.0\Transportation.DataLayer.dll
+E:\C#\Projects\TransportationProject\Transportation.Core\bin\Debug\net6.0\Transportation.DataLayer.pdb
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.csproj.AssemblyReference.cache
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.AssemblyInfoInputs.cache
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.AssemblyInfo.cs
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.csproj.CoreCompileInputs.cache
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.csproj.CopyComplete
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.dll
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\refint\Transportation.Core.dll
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\Transportation.Core.pdb
+E:\C#\Projects\TransportationProject\Transportation.Core\obj\Debug\net6.0\ref\Transportation.Core.dll

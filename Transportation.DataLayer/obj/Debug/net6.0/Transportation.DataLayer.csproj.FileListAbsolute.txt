@@ -1,0 +1,14 @@
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\bin\Debug\net6.0\Transportation.DataLayer.deps.json
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\bin\Debug\net6.0\Transportation.DataLayer.runtimeconfig.json
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\bin\Debug\net6.0\Transportation.DataLayer.dll
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\bin\Debug\net6.0\Transportation.DataLayer.pdb
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.csproj.AssemblyReference.cache
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.AssemblyInfoInputs.cache
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.AssemblyInfo.cs
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.csproj.CoreCompileInputs.cache
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.dll
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\refint\Transportation.DataLayer.dll
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.pdb
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\Transportation.DataLayer.genruntimeconfig.cache
+E:\C#\Projects\TransportationProject\Transportation.DataLayer\obj\Debug\net6.0\ref\Transportation.DataLayer.dll
