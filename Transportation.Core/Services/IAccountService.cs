@@ -22,5 +22,9 @@ namespace Transportation.Core.Services
         bool CheckUserPermissions(int permissionId, string userName);
 
         int GetUserIdByEmail(string email);
+
+        int GetDriverIdByUserName(string userName);
+
+        int GetContractorIdByUserName(string userName);
     }
 }

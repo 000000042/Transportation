@@ -124,5 +124,17 @@ namespace Transportation.Core.Repositories
             _context.UserRoles.Add(newRole);
             _context.SaveChanges();
         }
+
+        public int GetDriverIdByUserName(string userName)
+        {
+            return _context.Drivers.Include(u => u.User)
+                .SingleOrDefault(u => u.User.UserName == userName).DriverId;
+        }
+
+        public int GetContractorIdByUserName(string userName)
+        {
+            return _context.Contractors.Include(u => u.User)
+                .SingleOrDefault(u => u.User.UserName == userName).ContractorId;
+        }
     }
 }

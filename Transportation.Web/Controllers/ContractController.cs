@@ -30,7 +30,7 @@ namespace Transportation.Web.Controllers
         [Route("CreateCargoAnnounce")]
         public IActionResult CreateCargoAnnounce()
         {
-            ViewBag.ContractorId = _accountService.GetUserIdByEmail(User.FindFirstValue(ClaimTypes.Email));
+            ViewBag.ContractorId = _accountService.GetContractorIdByUserName(User.Identity.Name);
             var types = new List<SelectListItem>();
             types.AddRange(_contractService.GetTruckTypesToSelect());
             ViewData["Types"] = new SelectList(types, "Value", "Text");

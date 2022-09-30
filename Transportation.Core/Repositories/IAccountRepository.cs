@@ -31,5 +31,9 @@ namespace Transportation.Core.Repositories
         int GetUserIdByEmail(string email);
 
         void AddRoleToUser(UserRoles newRole);
+
+        int GetDriverIdByUserName(string userName);
+
+        int GetContractorIdByUserName(string userName);
     }
 }

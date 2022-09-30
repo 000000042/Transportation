@@ -137,10 +137,10 @@ namespace Transportation.Core.Services
                 contractor.IdentificationCard);
 
             string facePictureFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
-    "UserContent",
-    "Contractors",
-    "FacePictures",
-    contractor.FacePicture);
+                "UserContent",
+                "Contractors",
+                "FacePictures",
+                contractor.FacePicture);
 
             using (var stream = new FileStream(cardFilePath, FileMode.Create))
             {
@@ -213,10 +213,10 @@ namespace Transportation.Core.Services
                 driver.IdentificationCard);
 
             string facePictureFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
-    "UserContent",
-    "Drivers",
-    "FacePictures",
-    driver.FacePicture);
+                "UserContent",
+                "Drivers",
+                "FacePictures",
+                driver.FacePicture);
 
             using (var stream = new FileStream(cardFilePath, FileMode.Create))
             {
@@ -257,6 +257,16 @@ namespace Transportation.Core.Services
         public int GetUserIdByEmail(string email)
         {
             return _accountRepository.GetUserIdByEmail(email);
+        }
+
+        public int GetDriverIdByUserName(string userName)
+        {
+            return _accountRepository.GetDriverIdByUserName(userName);
+        }
+
+        public int GetContractorIdByUserName(string userName)
+        {
+            return _accountRepository.GetContractorIdByUserName(userName);
         }
     }
 }
