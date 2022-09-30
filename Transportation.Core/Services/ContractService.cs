@@ -24,7 +24,8 @@ namespace Transportation.Core.Services
         private IConfiguration _configuration;
 
         public ContractService(IContractRepository contractRepository,
-            IAdminService adminService, IConfiguration configuration, IAccountRepository accountRepository)
+            IAdminService adminService, IConfiguration configuration,
+            IAccountRepository accountRepository)
         {
             _contractRepository = contractRepository;
             _adminService = adminService;
@@ -63,6 +64,11 @@ namespace Transportation.Core.Services
             }
 
             return newAnnounce.AnnounceId;
+        }
+
+        public CargoAnnounce GetCargoAnnounceById(int announceId)
+        {
+            return _contractRepository.GetCargoAnnounceById(announceId);
         }
 
         public List<SelectListItem> GetContractorsAsItems()

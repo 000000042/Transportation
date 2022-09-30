@@ -29,5 +29,7 @@ namespace Transportation.Core.Services
         List<SelectListItem> GetTruckTypesToSelect();
 
         int AddCargoAnnounce(CargoAnnounceViewModel announce);
+
+        CargoAnnounce GetCargoAnnounceById(int announceId);
     }
 }

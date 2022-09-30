@@ -65,6 +65,13 @@ namespace Transportation.Core.Repositories
             return result;
         }
 
+        public CargoAnnounce GetCargoAnnounceById(int announceId)
+        {
+            return _context.CargoAnnounces.Include(r => r.Requests)
+                .Include(t => t.CargoTruckTypes)
+                .SingleOrDefault(a => a.AnnounceId == announceId);
+        }
+
         public ContractSign GetContract(int contractId)
         {
             ContractSign contract = _context.ContractSigns.Include(a => a.Announce).ThenInclude(d => d.Contractor)

@@ -6,6 +6,7 @@ using Transportation.Core.DTOs.ContractDTO;
 using Transportation.Core.Enums.UserEnums;
 using Transportation.Core.Security;
 using Transportation.Core.Services;
+using Transportation.DataLayer.Entities.Contract;
 
 namespace Transportation.Web.Controllers
 {
@@ -48,10 +49,14 @@ namespace Transportation.Web.Controllers
             return Redirect("/");
         }
 
-        [Route("CargoAnnounce/{announceId}")]
-        public IActionResult CargoAnnounce(int announceId)
+        [Route("ShowAnnounce/{announceId}")]
+        public IActionResult ShowAnnounce(int announceId)
         {
-            return View();
+            CargoAnnounce announce = _contractService.GetCargoAnnounceById(announceId);
+            if (announce == null)
+                return NotFound();
+
+            return View(announce);
         }
     }
 }
