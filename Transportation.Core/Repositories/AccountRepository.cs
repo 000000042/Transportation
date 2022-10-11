@@ -31,12 +31,12 @@ namespace Transportation.Core.Repositories
             return user.SingleOrDefault();
         }
 
-        public int GetUserIdByUsernameOrEmail(string usernameOrEmail)
+        public int GetUserIdByUsername(string usernameOrEmail)
         {
             return _context.Users.SingleOrDefault(u => u.UserName == usernameOrEmail || u.Email == usernameOrEmail).UserId;
         }
 
-        public void GiveDriverRole(UserRoles userRole)
+        public void GiveDriverRole(UserRole userRole)
         {
             _context.UserRoles.Add(userRole);
             _context.SaveChanges();
@@ -54,10 +54,9 @@ namespace Transportation.Core.Repositories
 
         public bool IsExistPhoneNumber(string phoneNumber)
         {
-            bool isNumberExistInDrivers = _context.Users.Any(u => u.Driver.PhoneNumber == phoneNumber);
-            bool isNumberExistInCompanies = _context.Users.Any(u => u.Contractor.PhoneNumber == phoneNumber);
+            bool isNumberExist = _context.Users.Any(u => u.PhoneNumber == phoneNumber);
 
-            if (isNumberExistInDrivers || isNumberExistInCompanies)
+            if (isNumberExist)
                 return true;
 
             return false;
@@ -119,7 +118,7 @@ namespace Transportation.Core.Repositories
             return _context.Users.SingleOrDefault(u => u.Email == email).UserId;
         }
 
-        public void AddRoleToUser(UserRoles newRole)
+        public void AddRoleToUser(UserRole newRole)
         {
             _context.UserRoles.Add(newRole);
             _context.SaveChanges();
@@ -135,6 +134,17 @@ namespace Transportation.Core.Repositories
         {
             return _context.Contractors.Include(u => u.User)
                 .SingleOrDefault(u => u.User.UserName == userName).ContractorId;
+        }
+
+        public void AddTruckTypesToDriver(DriverTruck truck)
+        {
+            _context.DriverTrucks.Add(truck);
+            _context.SaveChanges();
+        }
+
+        public int GetUserIdByPhoneNumber(string phoneNumber)
+        {
+            return _context.Users.SingleOrDefault(u => u.PhoneNumber == phoneNumber).UserId;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Transportation.DataLayer.Entities.User
 
         #region Navigation Props
 
-        public ICollection<UserRoles> UserRoles { get; set; }
+        public ICollection<UserRole> UserRoles { get; set; }
 
         public ICollection<RolePermission> RolePermissions { get; set; }
 

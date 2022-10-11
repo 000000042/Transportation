@@ -4,71 +4,99 @@
     ViewData["Title"] = "ثبت نام متصدی";
 }
 
-<h1 class="text-center">ثبت نام متصدی</h1>
+<section class="page-section about-heading">
+        <div class="container">
+            <img class="img-fluid bg-light border rounded-pill border-0 shadow-lg rounded about-heading-img mb-3 mb-lg-0" src="/assets/img/EasyLayer.ir-IR-Flag-3D-Free-scaled.jpg?h=3ecf91bbefd3ab7314af2bb2d16721c5">
+            <div class="about-heading-content">
+                <div class="row">
+                    <div class="col-lg-10 col-xl-9 mx-auto">
+                        <div class="bg-faded rounded p-5">
+                            <h4 class="section-heading mb-4"></h4>
+                            <span class="section-heading-lower" style="text-align: center;font-family: 'B Nazanin';font-size: 33px;height: 65.5938px;font-weight: bold;font-style: italic;">&nbsp;بخش ثبت نام پیمانکاران</span>
+                            <section>
+                                <form method="post" asp-action="RegisterContractor" enctype="multipart/form-data">
+                                    <div class="form-group" style="margin-bottom: 10px;">
+                                        <input asp-for="Email" type="email" id="Email" class="button-42 form-control" placeholder="ادرس الکترونیک" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 10px;">
+                                        <input asp-for="FirstName" id="naf-1" class="button-42 form-control" rows="1" placeholder="نام" style="font-family: 'B Nazanin';text-align: center;font-weight: bold;">
+                                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 10px;">
+                                        <input asp-for="LastName" id="naf-1" class="button-42 form-control" rows="1" placeholder="نام خانوادگی" style="font-family: 'B Nazanin';text-align: center;font-weight: bold;">
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 10px;">
+                                        <input asp-for="NationalCode" id="codemeli" class="button-42 form-control" rows="1" placeholder="کد ملی" style="font-family: 'B Nazanin';text-align: center;font-weight: bold;">
+                                        <span asp-validation-for="NationalCode" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 10px;">
+                                        <input asp-for="PhoneNumber" id="naf" class="button-42 form-control" rows="1" placeholder="شماره تماس" style="font-family: 'B Nazanin';text-align: center;font-weight: bold;">
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>  
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group" style="margin-bottom: 10px;">
+                                    <div>
+                                    <label for="Identification" class="btn btn-primary btn-Oscuro" type="button" style="font-family: 'B Nazanin';font-weight: bold;">بارگذاری تصویر کارت ملی شخص&nbsp;</label>
+                                    <br>
+                                    <p id="identificationName" style="font-size:20px;color:#e6a756;"></p>
+                                    <input hidden id="Identification" asp-for="IdentificationCard" type="file" class="btn-Oscuro">
+                                    </div>
+                                    <span asp-validation-for="IdentificationCard" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 10px;">
+                                       <div>
+                                        <label for="FacePicture" class="btn btn-primary btn-Oscuro" type="button" style="font-family: 'B Nazanin';font-weight: bold;">بارگذاری تصویر چهره شخص&nbsp;</label>
+                                        <br>
+                                        <p id="facePicName" style="font-size:20px;color:#e6a756;"></p>
+                                        <input hidden id="FacePicture" asp-for="FacePicture" type="file" class="btn-Oscuro">
+                                      </div>
+                                        <span asp-validation-for="FacePicture" class="text-danger"></span>
+                                    </div>
+                                    </div>
+                                <div style="height: 59px;">
+                                    <p style="text-align: center;font-weight: bold;font-family: 'B Nazanin';">عکس صورت شما به همراه برگه ای که نوشته ذیل خوانا باشد&nbsp;
+                                        <br>
+                               <label class="form-check-label">
+                                        <input class="form-check-input" asp-for="IsAccept" />
+                                        <label asp-for="IsAccept" class="control-label">"اینجانب مفاد شرایط و قوانین را خوانده&nbsp; و به آن متعهد میشوم"</label>
+                                   </label>
+                                        </p>
+                                </div>
+                            <div style="height: 59px;">
 
-<hr />
-<div class="row">
-    <div class="col-md-12">
-        <form asp-action="RegisterContractor" asp-controller="Account" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                             <button class="btn btn-primary d-block w-100" type="submit" style="font-family: 'B Nazanin';font-size: 20px;font-weight: bold;background: rgb(95,42,10);">
+                                قوانین را خوانده و شرایط مذکور را قبول دارم
+                             </button>
+                            </form>
+                            </section>
+                           <a href="/Terms" style="text-align: right;font-family: 'B Nazanin';color: rgb(0,0,0);">شرایط و قوانین</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RePassword" class="control-label"></label>
-                <input asp-for="RePassword" class="form-control" />
-                <span asp-validation-for="RePassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NationalCode" class="control-label"></label>
-                <input asp-for="NationalCode" class="form-control" />
-                <span asp-validation-for="NationalCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdentificationCard" class="control-label"></label>
-                <input type="file" asp-for="IdentificationCard" class="form-control" />
-                <span asp-validation-for="IdentificationCard" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FacePicture" class="control-label"></label>
-                <input type="file" asp-for="FacePicture" class="form-control" />
-                <span asp-validation-for="FacePicture" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="ثبت نام" class="btn btn-success" />
-            </div>
-        </form>
-    </div>
-</div>
+        </div>
+    </section>
 
 @section Scripts {
     @{
 
-    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
 
-}
-}
+    }
+    <script>
+                               var facePicElement = document.getElementById("FacePicture");
+                           var picNameElement = document.getElementById("facePicName");
+                          facePicElement.addEventListener("change", function(e){
+                            picNameElement.innerHTML = e.currentTarget.files[0].name;
+                            });
+
+                            var identificationElement = document.getElementById("Identification");
+                                   var identificationNameElement = document.getElementById("identificationName");
+                                identificationElement.addEventListener("change", function(e){
+                                  identificationNameElement.innerHTML = e.currentTarget.files[0].name;
+                                });
+    </script>
+    }

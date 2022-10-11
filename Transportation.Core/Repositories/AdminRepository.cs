@@ -55,7 +55,7 @@ namespace Transportation.Core.Repositories
             return _context.UserRoles.Any(d => d.RoleId == roleId && d.UserId == userId);
         }
 
-        public void GiveRoleToUser(UserRoles userRole)
+        public void GiveRoleToUser(UserRole userRole)
         {
             _context.UserRoles.Add(userRole);
             _context.SaveChanges();
@@ -73,10 +73,9 @@ namespace Transportation.Core.Repositories
 
         public bool IsExistPhoneNumber(string phoneNumber)
         {
-            bool isNumberExistInDrivers = _context.Users.Any(u => u.Driver.PhoneNumber == phoneNumber);
-            bool isNumberExistInCompanies = _context.Users.Any(u => u.Contractor.PhoneNumber == phoneNumber);
+            bool isNumberExist = _context.Users.Any(u => u.PhoneNumber == phoneNumber);
 
-            if (isNumberExistInDrivers || isNumberExistInCompanies)
+            if (isNumberExist)
                 return true;
 
             return false;

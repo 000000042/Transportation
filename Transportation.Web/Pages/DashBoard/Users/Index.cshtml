@@ -1,0 +1,63 @@
+﻿@page 
+@model Transportation.Web.Pages.Admin.Users.IndexModel
+@{
+}
+@if(ViewData["Type"] == "Driver")
+{
+    <h1>
+        لیست کاربران راننده
+    </h1>
+}
+@if(ViewData["Type"] == "Company")
+{
+        <h1>
+        لیست کاربران متصدی
+    </h1>
+}
+@if(ViewData["Type"] == "All")
+{
+            <h1>
+        لیست کاربران سایت
+    </h1>
+}
+<hr />
+
+<a class="btn btn-success btn-lg" href="/Admin/Users/CreateUser">ثبت کاربر جدید</a>
+
+<hr />
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer">
+    <thead>
+        <tr>
+            <th>نام کاربری</th>
+            <th>ایمیل</th>
+            <th>تاریخ ساخت</th>
+            <th>نوع کاربر</th>
+            <th>دستورات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.RegisterDate.PersianDateTime()</td>
+                <td>
+                    @if (user.UserType == UserTypes.Driver.ToString())
+                    {
+                        <p>راننده</p>
+                    }
+                    else
+                    {
+                        <p>شرکت</p>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-warning" href="/Admin/Users/EditUser/@user.UserId">ویرایش</a>
+                    <a class="btn btn-danger" href="/Admin/Users/DeleteUser/@user.UserId">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

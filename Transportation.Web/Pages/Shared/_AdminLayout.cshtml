@@ -1,121 +1,112 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>پنل مدیریت سایت</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>داشبورد - @ViewData["Title"]</title>
+    <meta name="description" content="آدرس : شرکت حمل و نقل سجاد (سهامی خاص) با شماره ثبت 41
+واقع در ساری ، 3 کیلومتری شمال غربی اسلام آباد روبروی کارخانه نکا چوب">
     <partial name="_AdminStyles" />
-</head>
-<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/Admin">Transportation</a>
-                @if (Context.Request.Cookies.Any(c => c.Key == "Admin.Auth"))
-                {
-                <a class="navbar-brand" onclick="LogOut()">Logout</a>
-                }
-            </div>
-                @if (Context.Request.Cookies.Any(c => c.Key == "Admin.Auth"))
-                {
-                    <!-- /.navbar-header -->
-                    <div class="navbar-default navbar-static-side" role="navigation">
-                        <div class="sidebar-collapse">
-                            <ul class="nav" id="side-menu">
-                                <li class="sidebar-search">
-                                    <div class="input-group custom-search-form">
-                                        <input type="text" class="form-control" placeholder="Search...">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                    <!-- /input-group -->
-                        </li>
-                                <li>
-                                    <a href="/Admin"><i class="fa fa-dashboard fa-fw"></i> پنل ادمین</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> مدیریت کاربران<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-second-level">
-                                        <li>
-                                            <a href="flot.html">دسترسی ها</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Admin/Users">کاربران</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Admin/Users/DeletedUsers">کاربران حذف شده</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-second-level -->
-                        </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>مدیریت حواله ها<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-second-level">
-                                        <li>
-                                            <a href="/Admin/Contracts/">حواله ها</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Admin/Contracts/DeletedContracts">حواله های ابطال شده</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-second-level -->
-                            </ul>
-                            <!-- /#side-menu -->
-                </div>
-                        <!-- /.sidebar-collapse -->
-            </div>
-                }
-
-            <!-- /.navbar-static-side -->
-        </nav>
-
-        <div id="page-wrapper">
-            @RenderBody()
-        </div>
-        <!-- /#page-wrapper -->
-        <!-- modal -->
-        <div class="modal" tabindex="-1" role="dialog" id="modalLogout">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">خروج از حساب</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" id="modalBody">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end modal -->
-
-    </div>
-    <!-- /#wrapper -->
-    @RenderSection("Modals", false)
-    <partial name="_AdminScripts" />
-    @RenderSection("Scripts", false)
-    <script>
-        function LogOut(){
-        var url = "https://localhost:44377/Admin/LogOut";
-        console.log(url);
-      $('#modalBody').load(url,function(){
-  $('#modalLogout').modal('toggle');
-    });
+    @RenderSection("Head", false)
+    <style>
+        body{
+            overflow:hidden;
         }
-    </script>
+    </style>
+</head>
+
+<body id="page-top" style="font-family: 'B Nazanin';">
+    <!-- Start: #01 -->
+    <div id="wrapper">
+        <!-- Start: #10 -->
+        <nav class="navbar navbar-light navbar-expand align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(93,41,9);font-family: 'B Nazanin';text-align: center;">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#" style="text-align: center;">
+                    <div class="sidebar-brand-icon rotate-n-15"><img src="/AdminContent/assets/img/32.png?h=aeeb43941f3563eb3f3c005058a8883c"></div>
+                    <div class="sidebar-brand-text mx-3"><span style="font-family: Nunito, sans-serif;">صفحه کارمندان</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;">
+                        <a class="nav-link button-42" href="/DashBoard" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">داشبورد<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i></a>
+                        <a class="nav-link button-42" href="/DashBoard/Contracts/Announces" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">اعلام بار ها<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                            <div style="height: 12px;"></div>
+                        </a><a class="nav-link button-42" href="/DashBoard/Contracts" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">حواله ها<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                            <div style="height: 12px;"></div>
+                        </a><a class="nav-link button-42" href="bider.html" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">تایید پیشنهادات<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                            <div style="height: 12px;"></div>
+                        </a><a class="nav-link button-42" href="/DashBoard/Users/Drivers/PendingUsers" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">تایید رانندگان<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                            <div style="height: 12px;"></div>
+                        </a><a class="nav-link button-42" href="/DashBoard/Users/Contractors/PendingUsers" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">تایید پیمانکاران<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                            <div style="height: 12px;"></div>
+                        </a></li>
+                </ul>
+            </div>
+        </nav><!-- End: #10 -->
+        <!-- Start: #20 -->
+        <div class="d-flex flex-column" id="content-wrapper">
+            <!-- Start: #21 -->
+            <div id="content" style="text-align: center;font-family: 'B Nazanin';height: 65.5938px;font-weight: bold;font-style: italic;">
+                <!-- Start: #22 -->
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="...... جست و جو"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                        </form>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+
+                            
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">42</span><i class="fas fa-envelope fa-fw"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">مرکز هشدار ها</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/AdminContent/assets/img/avatars/download.png?h=1a82d9e44eda31b7fd3d00a38b104313">
+                                                <div class="bg-success status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>پیشنهاد راننده جدید</span></div>
+                                                <p class="small text-gray-500 mb-0">حسین حسینی - 42 دقیقه پیش</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/AdminContent/assets/img/avatars/avatar3.jpeg?h=c5166867f10a4e454b5b2ae8d63268b3">
+                                                <div class="status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>اعلام بار جدید</span></div>
+                                                <p class="small text-gray-500 mb-0">محمد حسینی - 51 دقیقه پیش</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/AdminContent/assets/img/avatars/avatar3.jpeg?h=c5166867f10a4e454b5b2ae8d63268b3">
+                                                <div class="status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>اعلام بار جدید</span></div>
+                                                <p class="small text-gray-500 mb-0">محمد حسینی - 51 دقیقه پیش</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">نمایش تمامی اعلانات</a>
+                                    </div>
+                                </div>
+                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">احمد ذوقی</span><img class="border rounded-circle img-profile" src="/AdminContent/assets/img/avatars/download.png?h=1a82d9e44eda31b7fd3d00a38b104313"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>گزارش فعالیت</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;خروج</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            <div class="container">
+                    @RenderBody()
+            </div>
+            </div>
+        </div>
+    </div>
+    <partial name="_AdminScripts" />
+    @RenderSection("Scripts", false);
 </body>
 
 </html>

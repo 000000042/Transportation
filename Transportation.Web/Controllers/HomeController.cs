@@ -18,7 +18,8 @@ namespace Transportation.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [Route("Terms")]
+        public IActionResult Terms()
         {
             return View();
         }

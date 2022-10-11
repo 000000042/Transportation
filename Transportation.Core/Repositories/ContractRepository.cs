@@ -43,7 +43,7 @@ namespace Transportation.Core.Repositories
                 .Where(r => r.RoleId == 4)
                 .Select(u => new UsersToSelectList()
                 {
-                    FullName = u.User.Contractor.FirstName + " " + u.User.Contractor.LastName,
+                    FullName = u.User.FirstName + " " + u.User.LastName,
                     UserId = u.UserId
                 }).ToList();
 
@@ -58,11 +58,16 @@ namespace Transportation.Core.Repositories
                 .Where(r => r.RoleId == 3)
                 .Select(u => new UsersToSelectList()
                 {
-                    FullName = u.User.Driver.FirstName + " " + u.User.Driver.LastName,
+                    FullName = u.User.FirstName + " " + u.User.LastName,
                     UserId = u.UserId
                 }).ToList();
 
             return result;
+        }
+
+        public List<CargoAnnounce> GetAnnounces()
+        {
+            return _context.CargoAnnounces.ToList();
         }
 
         public CargoAnnounce GetCargoAnnounceById(int announceId)

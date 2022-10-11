@@ -48,7 +48,8 @@ namespace Transportation.Core.Services
                 Destination = announce.Destination,
                 DriverFee = announce.DriverFee,
                 PackageType = announce.PackageType,
-                ContractorId = announce.ContractorId
+                ContractorId = announce.ContractorId,
+                CreateDate = DateTime.Now
             };
             _contractRepository.CreateAnnounce(newAnnounce);
 
@@ -64,6 +65,20 @@ namespace Transportation.Core.Services
             }
 
             return newAnnounce.AnnounceId;
+        }
+
+        public List<AnnounceViewModel> GetAnnouncesToShow()
+        {
+            return _contractRepository.GetAnnounces()
+                .Select(a => new AnnounceViewModel()
+                {
+                    AnnounceId = a.AnnounceId,
+                    CreateDate = a.CreateDate,
+                    CargoType = a.CargoType,
+                    CargoWeight = a.CargoWeight,
+                    Beginning = a.Beginning,
+                    Destination = a.Destination
+                }).ToList();
         }
 
         public CargoAnnounce GetCargoAnnounceById(int announceId)
@@ -126,7 +141,7 @@ namespace Transportation.Core.Services
 
         public bool IsUserContractor(string email)
         {
-            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsernameOrEmail(email));
+            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsername(email));
 
             if (user != null)
             {
@@ -138,7 +153,7 @@ namespace Transportation.Core.Services
 
         public bool IsUserDriver(string email)
         {
-            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsernameOrEmail(email));
+            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsername(email));
 
             if (user != null)
             {

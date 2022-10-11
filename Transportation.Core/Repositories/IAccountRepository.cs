@@ -24,16 +24,20 @@ namespace Transportation.Core.Repositories
 
         User GetUser(int userId);
 
-        int GetUserIdByUsernameOrEmail(string usernameOrEmail);
+        int GetUserIdByUsername(string username);
 
         bool CheckUserPermissions(int permissionId, string userName);
 
         int GetUserIdByEmail(string email);
 
-        void AddRoleToUser(UserRoles newRole);
+        void AddRoleToUser(UserRole newRole);
 
         int GetDriverIdByUserName(string userName);
 
         int GetContractorIdByUserName(string userName);
+
+        void AddTruckTypesToDriver(DriverTruck truck);
+
+        int GetUserIdByPhoneNumber(string phoneNumber);
     }
 }

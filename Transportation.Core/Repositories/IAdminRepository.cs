@@ -25,7 +25,7 @@ namespace Transportation.Core.Repositories
 
         bool IsRoleExist(int roleId, int userId);
 
-        void GiveRoleToUser(UserRoles userRole);
+        void GiveRoleToUser(UserRole userRole);
 
         bool IsPasswordExist(string password);
 

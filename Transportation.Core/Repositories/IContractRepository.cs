@@ -29,5 +29,7 @@ namespace Transportation.Core.Repositories
         void AddTruckTypesToAnnounce(CargoTruckType type);
 
         CargoAnnounce GetCargoAnnounceById(int announceId);
+
+        List<CargoAnnounce> GetAnnounces();
     }
 }

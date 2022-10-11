@@ -15,72 +15,84 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\C#\Projects\TransportationProject\Transportation.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Contracts/AddContract.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ29udHJhY3RzXEFkZENvbnRyYWN0LmNzaHRtbA==
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Contracts/AddContract.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXENvbnRyYWN0c1xBZGRDb250cmFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Contracts/DeleteContract.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ29udHJhY3RzXERlbGV0ZUNvbnRyYWN0LmNzaHRtbA==
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Contracts/Announces.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXENvbnRyYWN0c1xBbm5vdW5jZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Contracts/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ29udHJhY3RzXEluZGV4LmNzaHRtbA==
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Contracts/CreateAnnounce.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXENvbnRyYWN0c1xDcmVhdGVBbm5vdW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Contracts/ShowContract.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ29udHJhY3RzXFNob3dDb250cmFjdC5jc2h0bWw=
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Contracts/DeleteContract.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXENvbnRyYWN0c1xEZWxldGVDb250cmFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW5kZXguY3NodG1s
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Contracts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXENvbnRyYWN0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTG9naW4uY3NodG1s
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Contracts/RequestCargo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXENvbnRyYWN0c1xSZXF1ZXN0Q2FyZ28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/LogOut.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTG9nT3V0LmNzaHRtbA==
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Contracts/ShowContract.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXENvbnRyYWN0c1xTaG93Q29udHJhY3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/Contractors/ApproveUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQ29udHJhY3RvcnNcQXBwcm92ZVVzZXIuY3NodG1s
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/Contractors/CreateCompany.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQ29udHJhY3RvcnNcQ3JlYXRlQ29tcGFueS5jc2h0bWw=
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/Contractors/PendingUsers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQ29udHJhY3RvcnNcUGVuZGluZ1VzZXJzLmNzaHRtbA==
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXExvZ091dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/CreateUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQ3JlYXRlVXNlci5jc2h0bWw=
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/Contractors/ApproveUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXENvbnRyYWN0b3JzXEFwcHJvdmVVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/DeleteUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRGVsZXRlVXNlci5jc2h0bWw=
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/Contractors/CreateCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXENvbnRyYWN0b3JzXENyZWF0ZUNvbXBhbnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/Drivers/ApproveUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRHJpdmVyc1xBcHByb3ZlVXNlci5jc2h0bWw=
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/Contractors/PendingUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXENvbnRyYWN0b3JzXFBlbmRpbmdVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/Drivers/CreateDriver.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRHJpdmVyc1xDcmVhdGVEcml2ZXIuY3NodG1s
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXENyZWF0ZVVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/Drivers/PendingUsers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRHJpdmVyc1xQZW5kaW5nVXNlcnMuY3NodG1s
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/DeleteUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXERlbGV0ZVVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/EditUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRWRpdFVzZXIuY3NodG1s
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/Drivers/ApproveUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXERyaXZlcnNcQXBwcm92ZVVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Admin/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcSW5kZXguY3NodG1s
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/Drivers/CreateDriver.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXERyaXZlcnNcQ3JlYXRlRHJpdmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/Drivers/PendingUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXERyaXZlcnNcUGVuZGluZ1VzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXEVkaXRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/DashBoard/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_AddContractPartial.cshtml]
@@ -117,6 +129,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_LogOutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dPdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_RequestCargoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9SZXF1ZXN0Q2FyZ29QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_ShowContractPartial.cshtml]
@@ -167,10 +183,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Contract/Index1.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RcSW5kZXgxLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Contract/ShowAnnounce.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RcU2hvd0Fubm91bmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -179,12 +191,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Home/Terms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Shared/_LayoutScripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRTY3JpcHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Shared/_LayoutStyles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRTdHlsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Shared/_SuccessRegister.cshtml]

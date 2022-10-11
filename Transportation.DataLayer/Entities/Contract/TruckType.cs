@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Transportation.DataLayer.Entities.User;
 
 namespace Transportation.DataLayer.Entities.Contract
 {
@@ -21,6 +22,8 @@ namespace Transportation.DataLayer.Entities.Contract
         #region Navigation Props
 
         public ICollection<CargoTruckType> CargoTruckTypes { get; set; }
+
+        public ICollection<DriverTruck> DriverTrucks { get; set; }
 
         #endregion
     }

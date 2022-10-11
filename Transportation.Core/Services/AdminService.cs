@@ -58,7 +58,7 @@ namespace Transportation.Core.Services
             if (_adminRepository.IsRoleExist(roleId, userId))
                 return false;
 
-            UserRoles addRole = new UserRoles()
+            UserRole addRole = new UserRole()
             {
                 RoleId = roleId,
                 UserId = userId
@@ -109,17 +109,13 @@ namespace Transportation.Core.Services
 
             Contractor newContractor = new Contractor()
             {
-                FirstName = company.FirstName,
-                LastName = company.LastName,
-                PhoneNumber = company.PhoneNumber,
-                NationalCode = company.NationalCode,
                 UserId = userId,
                 IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(company.IdentificationCard.FileName),
                 FacePicture = GuidGenerator.GuidGenerate() + Path.GetExtension(company.FacePicture.FileName)
             };
             int driverId = _accountRepository.AddContractor(newContractor);
 
-            UserRoles roles = new UserRoles()
+            UserRole roles = new UserRole()
             {
                 UserId = userId,
                 RoleId = 4
@@ -173,20 +169,15 @@ namespace Transportation.Core.Services
 
             Driver newDriver = new Driver()
             {
-                FirstName = driver.FirstName,
-                LastName = driver.LastName,
-                PhoneNumber = driver.PhoneNumber,
-                NationalCode = driver.NationalCode,
                 TruckFleetCode = driver.TruckFleetCode,
                 SmartDriverCode = driver.SmartDriverCode,
-                TruckType = driver.TruckType,
                 UserId = userId,
                 IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(driver.IdentificationCard.FileName)
             };
 
             int driverId = _accountRepository.AddDriver(newDriver);
 
-            UserRoles roles = new UserRoles()
+            UserRole roles = new UserRole()
             {
                 UserId = userId,
                 RoleId = 3

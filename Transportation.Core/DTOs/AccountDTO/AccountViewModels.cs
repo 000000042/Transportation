@@ -46,18 +46,25 @@ namespace Transportation.Core.DTOs.AccountDTO
         [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string TruckFleetCode { get; set; }
 
-        [Display(Name = "نوع کامیون")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(100, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public string TruckType { get; set; }
-
-        [Required]
         [Display(Name = "کارت شناسایی")]
         public IFormFile IdentificationCard { get; set; }
 
         [Display(Name = "تصویر چهره")]
-        [Required]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public IFormFile FacePicture { get; set; }
+
+        [Display(Name = "کارت هوشمند راننده")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public IFormFile SmartDriverCard { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Display(Name = "کامیون های راننده")]
+        public List<int> TruckTypes { get; set; }
+
+        [Required]
+        [Display(Name = "پذیرش قوانین")]
+        public bool IsAccept { get; set; }
     }
 
     public class ContractorRegisterViewModel
@@ -67,17 +74,6 @@ namespace Transportation.Core.DTOs.AccountDTO
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         [EmailAddress(ErrorMessage = "ایمیل وارد شده معتبر نمی باشد")]
         public string Email { get; set; }
-
-        [Display(Name = "کلمه عبور")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public string Password { get; set; }
-
-        [Display(Name = "تکرار کلمه عبور")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        [Compare("Password")]
-        public string RePassword { get; set; }
 
         [Display(Name = "نام")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -106,14 +102,18 @@ namespace Transportation.Core.DTOs.AccountDTO
         [Display(Name = "تصویر چهره")]
         [Required]
         public IFormFile FacePicture { get; set; }
+        
+        [Required]
+        [Display(Name = "پذیرش قوانین")]
+        public bool IsAccept { get; set; }
     }
 
     public class UserLoginViewModel
     {
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [Display(Name = "ایمیل")]
+        [Display(Name = "شماره تلغن همراه")]
         [MaxLength(400)]
-        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Display(Name = "کد ملی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]

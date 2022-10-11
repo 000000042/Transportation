@@ -50,6 +50,10 @@ namespace Transportation.DataLayer.Entities.Contract
         [MaxLength(800)]
         public string Description { get; set; }
 
+        [Required]
+        [Display(Name = "تاریخ ثبت")]
+        public DateTime CreateDate { get; set; }
+
         #region Navigation Props
 
         public ICollection<CargoTruckType> CargoTruckTypes { get; set; }

@@ -237,29 +237,9 @@ namespace Transportation.DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<string>("IdentificationCard")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("NationalCode")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -284,29 +264,13 @@ namespace Transportation.DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<string>("IdentificationCard")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("SmartDriverCard")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("NationalCode")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SmartDriverCode")
                         .IsRequired()
@@ -318,11 +282,6 @@ namespace Transportation.DataLayer.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("TruckType")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -332,6 +291,29 @@ namespace Transportation.DataLayer.Migrations
                         .IsUnique();
 
                     b.ToTable("Drivers");
+                });
+
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.DriverTruck", b =>
+                {
+                    b.Property<int>("DT_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DT_Id"), 1L, 1);
+
+                    b.Property<int>("DriverId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TruckId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DT_Id");
+
+                    b.HasIndex("DriverId");
+
+                    b.HasIndex("TruckId");
+
+                    b.ToTable("DriverTrucks");
                 });
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.User.Role", b =>
@@ -368,10 +350,12 @@ namespace Transportation.DataLayer.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("DriverContractRequestId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
@@ -382,10 +366,25 @@ namespace Transportation.DataLayer.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("NationalCode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
 
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime2");
@@ -405,12 +404,10 @@ namespace Transportation.DataLayer.Migrations
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("DriverContractRequestId");
-
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Transportation.DataLayer.Entities.User.UserRoles", b =>
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.UserRole", b =>
                 {
                     b.Property<int>("UR_Id")
                         .ValueGeneratedOnAdd()
@@ -436,7 +433,7 @@ namespace Transportation.DataLayer.Migrations
             modelBuilder.Entity("Transportation.DataLayer.Entities.Contract.CargoAnnounce", b =>
                 {
                     b.HasOne("Transportation.DataLayer.Entities.User.Contractor", "Contractor")
-                        .WithMany()
+                        .WithMany("Announces")
                         .HasForeignKey("ContractorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -453,7 +450,7 @@ namespace Transportation.DataLayer.Migrations
                         .IsRequired();
 
                     b.HasOne("Transportation.DataLayer.Entities.User.Driver", "Driver")
-                        .WithMany()
+                        .WithMany("Requests")
                         .HasForeignKey("DriverId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -550,18 +547,26 @@ namespace Transportation.DataLayer.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Transportation.DataLayer.Entities.User.User", b =>
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.DriverTruck", b =>
                 {
-                    b.HasOne("Transportation.DataLayer.Entities.Contract.CargoRequest", "DriverContract")
-                        .WithMany()
-                        .HasForeignKey("DriverContractRequestId")
+                    b.HasOne("Transportation.DataLayer.Entities.User.Driver", "Driver")
+                        .WithMany("DriverTrucks")
+                        .HasForeignKey("DriverId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("DriverContract");
+                    b.HasOne("Transportation.DataLayer.Entities.Contract.TruckType", "TruckType")
+                        .WithMany("DriverTrucks")
+                        .HasForeignKey("TruckId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Driver");
+
+                    b.Navigation("TruckType");
                 });
 
-            modelBuilder.Entity("Transportation.DataLayer.Entities.User.UserRoles", b =>
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.UserRole", b =>
                 {
                     b.HasOne("Transportation.DataLayer.Entities.User.Role", "Role")
                         .WithMany("UserRoles")
@@ -592,11 +597,25 @@ namespace Transportation.DataLayer.Migrations
             modelBuilder.Entity("Transportation.DataLayer.Entities.Contract.TruckType", b =>
                 {
                     b.Navigation("CargoTruckTypes");
+
+                    b.Navigation("DriverTrucks");
                 });
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.Permission.Permission", b =>
                 {
                     b.Navigation("RolePermissions");
+                });
+
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.Contractor", b =>
+                {
+                    b.Navigation("Announces");
+                });
+
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.Driver", b =>
+                {
+                    b.Navigation("DriverTrucks");
+
+                    b.Navigation("Requests");
                 });
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.User.Role", b =>

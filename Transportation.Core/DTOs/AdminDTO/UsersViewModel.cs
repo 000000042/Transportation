@@ -94,6 +94,10 @@ namespace Transportation.Core.DTOs.AdminDTO
         [Display(Name = "تصویر چهره")]
         [Required]
         public IFormFile FacePicture { get; set; }
+
+        [Display(Name = "کارت هوشمند راننده")]
+        [Required]
+        public IFormFile SmartDriverCard { get; set; }
     }
 
     public class AddContractorUserViewModel

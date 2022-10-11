@@ -25,6 +25,26 @@ namespace Transportation.DataLayer.Entities.User
         [EmailAddress(ErrorMessage = "ایمیل وارد شده معتبر نمی باشد")]
         public string Email { get; set; }
 
+        [Display(Name = "نام")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "نام خانوادگی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string LastName { get; set; }
+
+        [Display(Name = "شماره تلفن")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "کد ملی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string NationalCode { get; set; }
+
         [Display(Name = "کلمه عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
@@ -48,13 +68,11 @@ namespace Transportation.DataLayer.Entities.User
 
         #region Navigation Props
 
-        public ICollection<UserRoles> UserRoles { get; set; }
+        public ICollection<UserRole> UserRoles { get; set; }
 
         public Driver Driver { get; set; }
 
         public Contractor Contractor { get; set; }
-
-        public CargoRequest DriverContract { get; set; }
 
         public List<ContractSign> AdminSigns { get; set; }
 

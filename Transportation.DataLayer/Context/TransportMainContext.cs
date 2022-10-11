@@ -22,8 +22,9 @@ namespace Transportation.DataLayer.Context
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Contractor> Contractors { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<UserRoles> UserRoles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<DriverTruck> DriverTrucks { get; set; }
 
         #endregion
 
@@ -37,11 +38,8 @@ namespace Transportation.DataLayer.Context
         #region Contract & Cargos
 
         public DbSet<ContractSign> ContractSigns { get; set; }
-
         public DbSet<CargoAnnounce> CargoAnnounces { get; set; }
-
         public DbSet<TruckType> TruckTypes { get; set; }
-
         public DbSet<CargoTruckType> CargoTruckTypes { get; set; }
 
         #endregion

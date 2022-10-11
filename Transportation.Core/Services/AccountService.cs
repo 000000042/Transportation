@@ -31,15 +31,15 @@ namespace Transportation.Core.Services
 
         public bool LoginUser(UserLoginViewModel login)
         {
-            if (_accountRepository.IsExistEmail(login.Email))
+            if (_accountRepository.IsExistPhoneNumber(login.PhoneNumber))
             {
-                User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsernameOrEmail(login.Email));
+                User user = _accountRepository.GetUser(_accountRepository.GetUserIdByPhoneNumber(login.PhoneNumber));
                 if (user != null)
                 {
                     var salt = user.Salt;
                     string fixedPassword = PasswordHelper.EncodePassword(login.Password, salt);
 
-                    if (IsPasswordCurrect(login.Email, fixedPassword))
+                    if (IsPasswordCurrect(user.UserName, fixedPassword))
                     {
                         List<Claim> claims = new List<Claim>()
                         {
@@ -98,7 +98,11 @@ namespace Transportation.Core.Services
                 ActiveCode = GuidGenerator.GuidGenerate(),
                 UserName = userName,
                 Email = register.Email,
-                Password = PasswordHelper.EncodePassword(register.Password, salt),
+                FirstName = register.FirstName,
+                LastName = register.LastName,
+                NationalCode = register.NationalCode,
+                PhoneNumber = register.PhoneNumber,
+                Password = PasswordHelper.EncodePassword(register.NationalCode, salt),
                 IsActive = false,
                 IsDelete = false,
                 Salt = salt,
@@ -109,12 +113,7 @@ namespace Transportation.Core.Services
 
             Contractor contractor = new Contractor()
             {
-                PhoneNumber = register.PhoneNumber,
-                FirstName = register.FirstName,
-                LastName = register.LastName,
                 FacePicture = GuidGenerator.GuidGenerate() + Path.GetExtension(register.FacePicture.FileName),
-                NationalCode = register.NationalCode,
-
                 IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.IdentificationCard.FileName),
                 UserId = userId
             };
@@ -122,10 +121,10 @@ namespace Transportation.Core.Services
 
             _accountRepository.AddContractor(contractor);
 
-            UserRoles addRoles = new UserRoles()
+            UserRole addRoles = new UserRole()
             {
                 UserId = user.UserId,
-                RoleId = 4
+                RoleId = 5
             };
 
             _accountRepository.AddRoleToUser(addRoles);
@@ -173,6 +172,10 @@ namespace Transportation.Core.Services
                 ActiveCode = GuidGenerator.GuidGenerate(),
                 UserName = userName,
                 Email = register.Email,
+                FirstName = register.FirstName,
+                LastName = register.LastName,
+                NationalCode = register.NationalCode,
+                PhoneNumber = register.PhoneNumber,
                 Password = PasswordHelper.EncodePassword(register.NationalCode, salt),
                 IsActive = false,
                 IsDelete = false,
@@ -184,25 +187,32 @@ namespace Transportation.Core.Services
 
             Driver driver = new Driver()
             {
-                PhoneNumber = register.PhoneNumber,
-                FirstName = register.FirstName,
-                LastName = register.LastName,
-                TruckType = register.TruckType,
                 TruckFleetCode = register.TruckFleetCode,
-                NationalCode = register.NationalCode,
                 SmartDriverCode = register.SmartDriverCode,
                 IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.IdentificationCard.FileName),
                 FacePicture = GuidGenerator.GuidGenerate() + Path.GetExtension(register.FacePicture.FileName),
+                SmartDriverCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.SmartDriverCard.FileName),
                 UserId = userId
             };
 
             _accountRepository.AddDriver(driver);
 
-            UserRoles addRoles = new UserRoles()
+            UserRole addRoles = new UserRole()
             {
                 UserId = user.UserId,
-                RoleId = 3
+                RoleId = 6
             };
+
+            foreach(var truck in register.TruckTypes)
+            {
+                DriverTruck driverTruck = new DriverTruck()
+                {
+                    DriverId = driver.DriverId,
+                    TruckId = truck
+                };
+
+                _accountRepository.AddTruckTypesToDriver(driverTruck);
+            }
 
             _accountRepository.AddRoleToUser(addRoles);
 
@@ -218,6 +228,12 @@ namespace Transportation.Core.Services
                 "FacePictures",
                 driver.FacePicture);
 
+            string smartDriverCardPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
+                "UserContent",
+                "Drivers",
+                "FacePictures",
+                driver.SmartDriverCard);
+
             using (var stream = new FileStream(cardFilePath, FileMode.Create))
             {
                 register.IdentificationCard.CopyTo(stream);
@@ -228,12 +244,17 @@ namespace Transportation.Core.Services
                 register.FacePicture.CopyTo(stream);
             }
 
+            using (var stream = new FileStream(smartDriverCardPath, FileMode.Create))
+            {
+                register.SmartDriverCard.CopyTo(stream);
+            }
+
             return userId;
         }
 
         public bool IsPasswordCurrect(string userNameOrEmail, string password)
         {
-            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsernameOrEmail(userNameOrEmail));
+            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsername(userNameOrEmail));
 
             if (password != user.Password)
                 return false;

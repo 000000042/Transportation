@@ -37,9 +37,11 @@ namespace Transportation.Core.DTOs.ContractDTO
         public string Destination { get; set; }
 
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
-        [Display(Name = "صافی راننده")]
+        [Display(Name = "مبلغ پیشنهادی")]
         public string DriverFee { get; set; }
 
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "کامیون های درخواستی")]
         public List<int> TruckTypes { get; set; }
 
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
@@ -53,5 +55,34 @@ namespace Transportation.Core.DTOs.ContractDTO
         public int TypeId { get; set; }
 
         public string TypeTitle { get; set; }
+    }
+
+    public class AnnounceViewModel
+    {
+        [Required]
+        public int AnnounceId { get; set; }
+
+        [Required]
+        [Display(Name = "تاریخ ثبت")]
+        public DateTime CreateDate { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "نوع بار")]
+        [MaxLength(300)]
+        public string CargoType { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "تناژ بار")]
+        public int CargoWeight { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "مبدا")]
+        [MaxLength(400)]
+        public string Beginning { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "مقصد")]
+        [MaxLength(400)]
+        public string Destination { get; set; }
     }
 }

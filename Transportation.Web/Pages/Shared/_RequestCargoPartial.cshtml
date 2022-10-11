@@ -1,0 +1,25 @@
+﻿@model CargoRequest
+
+
+<form asp-page="RequestCargo" method="post">
+    <div class="form-group">
+        <label asp-for="OfferPrice"></label>
+        <input asp-for="OfferPrice" type="number" class="form-control" placeholder="قیمت پیشنهادی">
+        <span asp-validation-for="OfferPrice" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <button type="submit" class="button-33" style="margin-top:20px; transform: scale(0.74);text-align: center;">ثبت درخواست بار</button>
+</form>
+
+    <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+    <script>
+        $(function () {
+            CKEDITOR.replace('Description', {
+            customConfig: '/js/Config.js'
+        });
+        });
+        </script>

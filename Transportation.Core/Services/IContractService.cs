@@ -31,5 +31,7 @@ namespace Transportation.Core.Services
         int AddCargoAnnounce(CargoAnnounceViewModel announce);
 
         CargoAnnounce GetCargoAnnounceById(int announceId);
+
+        List<AnnounceViewModel> GetAnnouncesToShow();
     }
 }
