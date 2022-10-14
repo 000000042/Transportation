@@ -28,13 +28,16 @@ namespace Transportation.DataLayer.Entities.Contract
         [Required]
         public DateTime SignDate { get; set; }
 
+        [Required]
+        public DateTime DeleteSignDate { get; set; }
+
         public bool IsDelete { get; set; }
 
 
         #region Navigation Props
 
         [ForeignKey("AdminId")]
-        public User.User Admin { get; set; }
+        public User.Admin Admin { get; set; }
 
         [ForeignKey("AnnounceId")]
         public CargoAnnounce Announce { get; set; }

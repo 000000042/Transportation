@@ -41,6 +41,7 @@ namespace Transportation.DataLayer.Context
         public DbSet<CargoAnnounce> CargoAnnounces { get; set; }
         public DbSet<TruckType> TruckTypes { get; set; }
         public DbSet<CargoTruckType> CargoTruckTypes { get; set; }
+        public DbSet<CargoRequest> CargoRequests { get; set; }
 
         #endregion
 

@@ -74,7 +74,7 @@ namespace Transportation.DataLayer.Entities.User
 
         public Contractor Contractor { get; set; }
 
-        public List<ContractSign> AdminSigns { get; set; }
+        public Admin Admin { get; set; }
 
         #endregion
     }

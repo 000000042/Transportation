@@ -22,7 +22,7 @@ namespace Transportation.Core.Services
 
         List<SelectListItem> GetContractorsAsItems();
 
-        int SignContract(SignContractViewModel contract);
+        int SignContract(int requestId);
 
         ContractSign GetContractToShow(int contractId);
 
@@ -33,5 +33,17 @@ namespace Transportation.Core.Services
         CargoAnnounce GetCargoAnnounceById(int announceId);
 
         List<AnnounceViewModel> GetAnnouncesToShow();
+
+        void AddRequestToAnnounce(RequestViewModel request);
+
+        List<CargoRequest> GetRequestsForAnnounce(int announceId);
+
+        bool DeclineRequest(int requestId);
+
+        bool IsExistContractAnnounce(int announceId);
+
+        bool IsExistAnnounce(int announceId);
+
+        bool IsExistRequests(int announceId);
     }
 }

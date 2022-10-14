@@ -85,4 +85,65 @@ namespace Transportation.Core.DTOs.ContractDTO
         [MaxLength(400)]
         public string Destination { get; set; }
     }
+
+    public class RequestViewModel
+    {
+        [Required]
+        public int DriverId { get; set; }
+
+        [Required]
+        public int AnnounceId { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "مبلغ درخواستی")]
+        public int OfferPrice { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "توضیحات")]
+        [MaxLength(800)]
+        public string Description { get; set; }
+    }
+    public class ShowContractsViewModel
+    {
+        public int ContractId { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "نوع بار")]
+        [MaxLength(300)]
+        public string CargoType { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "مبدا")]
+        [MaxLength(400)]
+        public string Beginning { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "مقصد")]
+        [MaxLength(400)]
+        public string Destination { get; set; }
+
+        [Display(Name = "کد ناوگان")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string TruckFleetCode { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "حواله دریافتی")]
+        public int RecievedRemittance { get; set; }
+
+        [Display(Name = "نام محول")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
+        [Display(Name = "صافی راننده")]
+        public int DriverFee { get; set; }
+
+        [Required]
+        public DateTime SignDate { get; set; }
+
+        [Required]
+        public DateTime DeleteDate { get; set; }
+    }
 }

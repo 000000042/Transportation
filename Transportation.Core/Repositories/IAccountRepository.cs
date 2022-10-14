@@ -24,11 +24,7 @@ namespace Transportation.Core.Repositories
 
         User GetUser(int userId);
 
-        int GetUserIdByUsername(string username);
-
         bool CheckUserPermissions(int permissionId, string userName);
-
-        int GetUserIdByEmail(string email);
 
         void AddRoleToUser(UserRole newRole);
 
@@ -38,6 +34,10 @@ namespace Transportation.Core.Repositories
 
         void AddTruckTypesToDriver(DriverTruck truck);
 
+        int GetAdminIdByUserName(string userName);
+
         int GetUserIdByPhoneNumber(string phoneNumber);
+
+        int GetUserIdByUserName(string userName);
     }
 }

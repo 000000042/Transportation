@@ -254,7 +254,7 @@ namespace Transportation.Core.Services
 
         public bool IsPasswordCurrect(string userNameOrEmail, string password)
         {
-            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsername(userNameOrEmail));
+            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUserName(userNameOrEmail));
 
             if (password != user.Password)
                 return false;
@@ -275,11 +275,6 @@ namespace Transportation.Core.Services
             return false;
         }
 
-        public int GetUserIdByEmail(string email)
-        {
-            return _accountRepository.GetUserIdByEmail(email);
-        }
-
         public int GetDriverIdByUserName(string userName)
         {
             return _accountRepository.GetDriverIdByUserName(userName);
@@ -288,6 +283,11 @@ namespace Transportation.Core.Services
         public int GetContractorIdByUserName(string userName)
         {
             return _accountRepository.GetContractorIdByUserName(userName);
+        }
+
+        public int GetAdminIdByUserName(string userName)
+        {
+            return _accountRepository.GetAdminIdByUserName(userName);
         }
     }
 }

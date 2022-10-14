@@ -31,11 +31,6 @@ namespace Transportation.Core.Repositories
             return user.SingleOrDefault();
         }
 
-        public int GetUserIdByUsername(string usernameOrEmail)
-        {
-            return _context.Users.SingleOrDefault(u => u.UserName == usernameOrEmail || u.Email == usernameOrEmail).UserId;
-        }
-
         public void GiveDriverRole(UserRole userRole)
         {
             _context.UserRoles.Add(userRole);
@@ -113,11 +108,6 @@ namespace Transportation.Core.Repositories
             return RolePermissions.Any(p => UserRoles.Contains(p));
         }
 
-        public int GetUserIdByEmail(string email)
-        {
-            return _context.Users.SingleOrDefault(u => u.Email == email).UserId;
-        }
-
         public void AddRoleToUser(UserRole newRole)
         {
             _context.UserRoles.Add(newRole);
@@ -126,14 +116,20 @@ namespace Transportation.Core.Repositories
 
         public int GetDriverIdByUserName(string userName)
         {
-            return _context.Drivers.Include(u => u.User)
-                .SingleOrDefault(u => u.User.UserName == userName).DriverId;
+            var user = _context.Users
+                .Include(a => a.Driver)
+                .SingleOrDefault(u => u.UserName == userName);
+
+            return user.Driver.DriverId;
         }
 
         public int GetContractorIdByUserName(string userName)
         {
-            return _context.Contractors.Include(u => u.User)
-                .SingleOrDefault(u => u.User.UserName == userName).ContractorId;
+            var user = _context.Users
+                .Include(a => a.Contractor)
+                .SingleOrDefault(u => u.UserName == userName);
+
+            return user.Contractor.ContractorId;
         }
 
         public void AddTruckTypesToDriver(DriverTruck truck)
@@ -141,10 +137,22 @@ namespace Transportation.Core.Repositories
             _context.DriverTrucks.Add(truck);
             _context.SaveChanges();
         }
+        public int GetAdminIdByUserName(string userName)
+        {
+            var user = _context.Users
+                .Include(a => a.Admin)
+                .SingleOrDefault(u => u.UserName == userName);
+            return user.Admin.AdminId;
+        }
 
         public int GetUserIdByPhoneNumber(string phoneNumber)
         {
             return _context.Users.SingleOrDefault(u => u.PhoneNumber == phoneNumber).UserId;
+        }
+
+        public int GetUserIdByUserName(string userName)
+        {
+            return _context.Users.SingleOrDefault(u => u.UserName == userName).UserId;
         }
     }
 }

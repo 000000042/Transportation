@@ -46,6 +46,9 @@ namespace Transportation.DataLayer.Migrations
                     b.Property<int>("ContractorId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(800)
@@ -83,6 +86,9 @@ namespace Transportation.DataLayer.Migrations
                     b.Property<int>("AnnounceId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(800)
@@ -90,6 +96,9 @@ namespace Transportation.DataLayer.Migrations
 
                     b.Property<int>("DriverId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<int>("OfferPrice")
                         .HasColumnType("int");
@@ -100,7 +109,7 @@ namespace Transportation.DataLayer.Migrations
 
                     b.HasIndex("DriverId");
 
-                    b.ToTable("CargoRequest");
+                    b.ToTable("CargoRequests");
                 });
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.Contract.CargoTruckType", b =>
@@ -139,6 +148,9 @@ namespace Transportation.DataLayer.Migrations
 
                     b.Property<int>("AnnounceId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DeleteSignDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
@@ -223,6 +235,33 @@ namespace Transportation.DataLayer.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("RolePermissions");
+                });
+
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.Admin", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"), 1L, 1);
+
+                    b.Property<string>("FacePicture")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdentificationCard")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AdminId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Admin");
                 });
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.User.Contractor", b =>
@@ -481,7 +520,7 @@ namespace Transportation.DataLayer.Migrations
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.Contract.ContractSign", b =>
                 {
-                    b.HasOne("Transportation.DataLayer.Entities.User.User", "Admin")
+                    b.HasOne("Transportation.DataLayer.Entities.User.Admin", "Admin")
                         .WithMany("AdminSigns")
                         .HasForeignKey("AdminId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -523,6 +562,17 @@ namespace Transportation.DataLayer.Migrations
                     b.Navigation("Permission");
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.Admin", b =>
+                {
+                    b.HasOne("Transportation.DataLayer.Entities.User.User", "User")
+                        .WithOne("Admin")
+                        .HasForeignKey("Transportation.DataLayer.Entities.User.Admin", "UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.User.Contractor", b =>
@@ -606,6 +656,11 @@ namespace Transportation.DataLayer.Migrations
                     b.Navigation("RolePermissions");
                 });
 
+            modelBuilder.Entity("Transportation.DataLayer.Entities.User.Admin", b =>
+                {
+                    b.Navigation("AdminSigns");
+                });
+
             modelBuilder.Entity("Transportation.DataLayer.Entities.User.Contractor", b =>
                 {
                     b.Navigation("Announces");
@@ -627,7 +682,8 @@ namespace Transportation.DataLayer.Migrations
 
             modelBuilder.Entity("Transportation.DataLayer.Entities.User.User", b =>
                 {
-                    b.Navigation("AdminSigns");
+                    b.Navigation("Admin")
+                        .IsRequired();
 
                     b.Navigation("Contractor")
                         .IsRequired();

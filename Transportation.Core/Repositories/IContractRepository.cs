@@ -31,5 +31,19 @@ namespace Transportation.Core.Repositories
         CargoAnnounce GetCargoAnnounceById(int announceId);
 
         List<CargoAnnounce> GetAnnounces();
+
+        void AddRequestToAnnounce(CargoRequest request);
+
+        List<CargoRequest> GetRequestsForAnnounce(int announceId);
+
+        CargoRequest GetCargoRequestById(int requestId);
+
+        bool DeleteRequest(CargoRequest request);
+
+        bool IsExistContractAnnounce(int announceId);
+
+        bool IsExistRequests(int announceId);
+
+        bool IsExistAnnounce(int announceId);
     }
 }

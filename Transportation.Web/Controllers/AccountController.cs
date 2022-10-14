@@ -21,19 +21,32 @@ namespace Transportation.Web.Controllers
         }
 
         [Route("Login")]
-        public IActionResult Login()
+        public IActionResult Login(string ReturnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return Redirect("/");
+            }
+
+            ViewBag.ReturnUrl = ReturnUrl;
             return View();
         }
 
+        [Route("Login")]
         [HttpPost]
-        public IActionResult LoginUser(UserLoginViewModel login)
+        public IActionResult Login(UserLoginViewModel login, string ReturnUrl)
         {
             if (!ModelState.IsValid)
                 return View("Login", login);
 
             if (_accountService.LoginUser(login))
                 ViewBag.IsSuccess = true;
+
+            if (!string.IsNullOrEmpty(ReturnUrl))
+            {
+                return LocalRedirect(ReturnUrl);
+            }
+
             return View("Login", login);
         }
 
@@ -52,6 +65,9 @@ namespace Transportation.Web.Controllers
         [Route("Register/Driver")]
         public IActionResult RegisterDriver()
         {
+            if (User.Identity.IsAuthenticated)
+                return Redirect("/");
+
             var types = new List<SelectListItem>();
             types.AddRange(_contractService.GetTruckTypesToSelect());
             ViewData["Types"] = new SelectList(types, "Value", "Text");
@@ -77,6 +93,9 @@ namespace Transportation.Web.Controllers
         [Route("Register/Contractor")]
         public IActionResult RegisterContractor()
         {
+            if (User.Identity.IsAuthenticated)
+                return Redirect("/");
+
             return View("RegisterContractor");
         }
 

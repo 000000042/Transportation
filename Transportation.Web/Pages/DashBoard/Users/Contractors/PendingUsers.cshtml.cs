@@ -6,6 +6,7 @@ using Transportation.Core.Services;
 
 namespace Transportation.Web.Pages.Admin.Users.Contractors
 {
+    [PermissionChecker(4)]
     public class PendingUsersModel : PageModel
     {
         private IAdminService _adminService;

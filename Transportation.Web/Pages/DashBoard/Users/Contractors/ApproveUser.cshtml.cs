@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Transportation.Core.Conventors;
+using Transportation.Core.Security;
 using Transportation.Core.Senders;
 using Transportation.Core.Services;
 using Transportation.DataLayer.Entities.User;
 
 namespace Transportation.Web.Pages.Admin.Users.Contractors
 {
+    [PermissionChecker(16)]
     public class ApproveUserModel : PageModel
     {
         private IAdminService _adminService;

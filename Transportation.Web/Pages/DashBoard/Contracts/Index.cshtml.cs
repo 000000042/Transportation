@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Transportation.Core.DTOs.AdminDTO;
+using Transportation.Core.DTOs.ContractDTO;
+using Transportation.Core.Security;
 using Transportation.Core.Services;
 
 namespace Transportation.Web.Pages.Admin.Contracts
 {
+    [PermissionChecker(1002)]
     public class IndexModel : PageModel
     {
         private IContractService _contractService;

@@ -67,9 +67,36 @@ namespace Transportation.Core.Services
             return newAnnounce.AnnounceId;
         }
 
+        public void AddRequestToAnnounce(RequestViewModel request)
+        {
+            CargoRequest newRequest = new CargoRequest()
+            {
+                AnnounceId = request.AnnounceId,
+                DriverId = request.DriverId,
+                OfferPrice = request.OfferPrice,
+                Description = request.Description,
+                CreateDate = DateTime.Now
+            };
+            _contractRepository.AddRequestToAnnounce(newRequest);
+        }
+
+        public bool DeclineRequest(int requestId)
+        {
+            CargoRequest request = _contractRepository.GetCargoRequestById(requestId);
+            if (request == null)
+                return false;
+
+            bool decline = _contractRepository.DeleteRequest(request);
+            if (decline)
+                return true;
+            else
+                return false;
+        }
+
         public List<AnnounceViewModel> GetAnnouncesToShow()
         {
             return _contractRepository.GetAnnounces()
+                .Where(a => !a.Contracts.Any(c => c.AnnounceId == a.AnnounceId))
                 .Select(a => new AnnounceViewModel()
                 {
                     AnnounceId = a.AnnounceId,
@@ -106,7 +133,12 @@ namespace Transportation.Core.Services
                     CargoType = c.Announce.CargoType,
                     Beginning = c.Announce.Beginning,
                     Destination = c.Announce.Destination,
-                    SignDate = c.SignDate
+                    SignDate = c.SignDate,
+                    DriverFee = int.Parse(c.Announce.DriverFee),
+                    UserName = c.Admin.User.UserName,
+                    RecievedRemittance = c.RecievedRemittance,
+                    TruckFleetCode = c.Request.Driver.TruckFleetCode,
+                    DeleteDate = c.DeleteSignDate
             }).ToList();
 
             return contracts;
@@ -128,6 +160,11 @@ namespace Transportation.Core.Services
             }).ToList();
         }
 
+        public List<CargoRequest> GetRequestsForAnnounce(int announceId)
+        {
+            return _contractRepository.GetRequestsForAnnounce(announceId);
+        }
+
         public List<SelectListItem> GetTruckTypesToSelect()
         {
             List<TruckTypesToSelect> types = _contractRepository.GetTruckTypesToSelect();
@@ -139,9 +176,24 @@ namespace Transportation.Core.Services
             }).ToList();
         }
 
+        public bool IsExistAnnounce(int announceId)
+        {
+            return _contractRepository.IsExistAnnounce(announceId);
+        }
+
+        public bool IsExistContractAnnounce(int announceId)
+        {
+            return _contractRepository.IsExistContractAnnounce(announceId);
+        }
+
+        public bool IsExistRequests(int announceId)
+        {
+            return _contractRepository.IsExistRequests(announceId);
+        }
+
         public bool IsUserContractor(string email)
         {
-            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsername(email));
+            User user = _accountRepository.GetUser(_accountRepository.GetAdminIdByUserName(email));
 
             if (user != null)
             {
@@ -153,7 +205,7 @@ namespace Transportation.Core.Services
 
         public bool IsUserDriver(string email)
         {
-            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUsername(email));
+            User user = _accountRepository.GetUser(_accountRepository.GetUserIdByUserName(email));
 
             if (user != null)
             {
@@ -163,17 +215,23 @@ namespace Transportation.Core.Services
             return false;
         }
 
-        public int SignContract(SignContractViewModel contract)
+        public int SignContract(int requestId)
         {
-            string secretKey = _configuration["Encryption:EncryptSecretKey"];
-            string adminUserName = EncryptHelper.Decrypt(_context.HttpContext.Request.Cookies
-                .SingleOrDefault(c => c.Key == "Admin.Auth").Value, secretKey);
+            CargoRequest request = _contractRepository.GetCargoRequestById(requestId);
+
+            if (request == null)
+                return 0;
+
+            int adminId = _accountRepository.GetAdminIdByUserName(_context.HttpContext.User.Identity.Name);
             ContractSign sign = new ContractSign()
             {
-                AdminId = _adminService.GetUserIdByEmail(adminUserName),
-                RecievedRemittance = contract.RecievedRemittance,
+                AdminId = adminId,
+                AnnounceId = request.AnnounceId,
+                RequestId = request.RequestId,
+                RecievedRemittance = 500000,
                 SignDate = DateTime.Now,
-                IsDelete = false
+                IsDelete = false,
+                DeleteSignDate = DateTime.Now.AddDays(1),
             };
 
             return _contractRepository.SignContract(sign);

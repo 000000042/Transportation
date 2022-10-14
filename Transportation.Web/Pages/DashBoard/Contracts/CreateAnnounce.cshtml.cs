@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Transportation.Core.DTOs.ContractDTO;
+using Transportation.Core.Security;
 using Transportation.Core.Services;
 
 namespace Transportation.Web.Pages.DashBoard.Contracts
 {
+    [PermissionChecker(20)]
     public class CreateAnnounceModel : PageModel
     {
         private IContractService _contractService;

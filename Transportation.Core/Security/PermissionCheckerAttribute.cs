@@ -31,7 +31,7 @@ namespace Transportation.Core.Security
 
                 if (!_accountService.CheckUserPermissions(_permissionId, userName))
                 {
-                    context.Result = new RedirectResult("/Home?" + context.HttpContext.Request.Path);
+                    context.Result = new RedirectResult("/");
                 }
             }
             else

@@ -21,6 +21,12 @@ namespace Transportation.Core.Repositories
             _context = context;
         }
 
+        public void AddRequestToAnnounce(CargoRequest request)
+        {
+            _context.CargoRequests.Add(request);
+            _context.SaveChanges();
+        }
+
         public void AddTruckTypesToAnnounce(CargoTruckType type)
         {
             _context.CargoTruckTypes.Add(type);
@@ -33,6 +39,15 @@ namespace Transportation.Core.Repositories
             _context.SaveChanges();
 
             return announce.AnnounceId;
+        }
+
+        public bool DeleteRequest(CargoRequest request)
+        {
+            request.IsDelete = true;
+            _context.CargoRequests.Update(request);
+            _context.SaveChanges();
+
+            return true;
         }
 
         public List<UsersToSelectList> GetAllContractorsToSelect()
@@ -67,7 +82,9 @@ namespace Transportation.Core.Repositories
 
         public List<CargoAnnounce> GetAnnounces()
         {
-            return _context.CargoAnnounces.ToList();
+            return _context.CargoAnnounces
+                .Include(c => c.Contracts)
+                .ToList();
         }
 
         public CargoAnnounce GetCargoAnnounceById(int announceId)
@@ -75,6 +92,17 @@ namespace Transportation.Core.Repositories
             return _context.CargoAnnounces.Include(r => r.Requests)
                 .Include(t => t.CargoTruckTypes)
                 .SingleOrDefault(a => a.AnnounceId == announceId);
+        }
+
+        public CargoRequest GetCargoRequestById(int requestId)
+        {
+            return _context.CargoRequests
+                .Include(a => a.Announce)
+                .ThenInclude(c => c.Contractor)
+                .ThenInclude(u => u.User)
+                .Include(d => d.Driver)
+                .ThenInclude(u => u.User)
+                .SingleOrDefault(r => r.RequestId == requestId);
         }
 
         public ContractSign GetContract(int contractId)
@@ -91,7 +119,20 @@ namespace Transportation.Core.Repositories
                 .ThenInclude(c => c.Contractor)
                 .Include(r => r.Request)
                 .ThenInclude(d => d.Driver)
+                .Include(a => a.Admin)
+                .ThenInclude(u => u.User)
                 .ToList();
+        }
+
+        public List<CargoRequest> GetRequestsForAnnounce(int announceId)
+        {
+            return _context.CargoRequests
+                .Include(a => a.Announce)
+                .ThenInclude(c => c.Contractor)
+                .ThenInclude(u => u.User)
+                .Include(d => d.Driver)
+                .ThenInclude(u => u.User)
+                .Where(a => a.AnnounceId == announceId).ToList();
         }
 
         public List<TruckTypesToSelect> GetTruckTypesToSelect()
@@ -104,6 +145,21 @@ namespace Transportation.Core.Repositories
     }).ToList();
 
             return result;
+        }
+
+        public bool IsExistAnnounce(int announceId)
+        {
+            return _context.CargoAnnounces.Any(a => a.AnnounceId == announceId);
+        }
+
+        public bool IsExistContractAnnounce(int announceId)
+        {
+            return _context.ContractSigns.Any(c => c.AnnounceId == announceId);
+        }
+
+        public bool IsExistRequests(int announceId)
+        {
+            return _context.CargoRequests.Any(r => r.AnnounceId == announceId);
         }
 
         public int SignContract(ContractSign contract)
