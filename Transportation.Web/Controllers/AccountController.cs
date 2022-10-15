@@ -34,10 +34,13 @@ namespace Transportation.Web.Controllers
 
         [Route("Login")]
         [HttpPost]
-        public IActionResult Login(UserLoginViewModel login, string ReturnUrl)
+        public IActionResult Login(UserLoginViewModel login, string? ReturnUrl)
         {
             if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("PhoneNumber", "!اطلاعات وارد شده صحیح نمی باشد");
                 return View("Login", login);
+            }
 
             if (_accountService.LoginUser(login))
                 ViewBag.IsSuccess = true;

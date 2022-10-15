@@ -26,5 +26,7 @@ namespace Transportation.Core.Services
         int GetContractorIdByUserName(string userName);
 
         int GetAdminIdByUserName(string userName);
+
+        bool CheckUserRoles(int roleId, string userName);
     }
 }

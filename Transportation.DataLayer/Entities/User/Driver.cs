@@ -27,12 +27,6 @@ namespace Transportation.DataLayer.Entities.User
         public string TruckFleetCode { get; set; }
 
         [Required]
-        public string IdentificationCard { get; set; }
-
-        [Required]
-        public string FacePicture { get; set; }
-
-        [Required]
         public string SmartDriverCard { get; set; }
 
         #region Navigation Props

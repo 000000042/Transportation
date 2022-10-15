@@ -9,6 +9,7 @@ namespace Transportation.Web.Pages.DashBoard.Contracts
     [PermissionChecker(1)]
     [PermissionChecker(17)]
     [PermissionChecker(18)]
+    [PermissionChecker(1002)]
     public class AnnouncesModel : PageModel
     {
         private IContractService _contractService;

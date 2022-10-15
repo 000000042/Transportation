@@ -3,13 +3,18 @@
 @{
     ViewData["Title"] = "خانه";
 }
+@inject IAccountService _AccountService
 <div class="container-fluid">
-                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">داشبورد</h3>
-                            <div>
-                                <a class="btn btn-primary" style="background: rgb(240,129,36);" href="/DashBoard/Contracts/CreateAnnounce">اعلام بار جدید</a>
+                        <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                            <h3 class="text-dark mb-0">داشبورد</h3>
+                            @if (_AccountService.CheckUserPermissions(20, User.Identity.Name))
+                            {
+                                <div>
+                                    <a class="btn btn-primary" style="background: rgb(240,129,36);" href="/DashBoard/Contracts/CreateAnnounce">اعلام بار جدید</a>
+                                </div>
+                            }
                         </div>
-                    </div>
+
                     <div class="row">
                         <div class="col-md-6 col-xl-3 mb-4">
                             <div class="card shadow border-start-primary py-2">

@@ -1,0 +1,43 @@
+﻿@inject IAccountService _AccountService  
+      <nav class="navbar navbar-light navbar-expand align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(93,41,9);font-family: 'B Nazanin';text-align: center;">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#" style="text-align: center;">
+                    <div class="sidebar-brand-icon rotate-n-15"><img src="/AdminContent/assets/img/32.png?h=aeeb43941f3563eb3f3c005058a8883c"></div>
+                    <div class="sidebar-brand-text mx-3"><span style="font-family: Nunito, sans-serif;">صفحه کارمندان</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="nav-link button-42" href="/DashBoard" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">داشبورد<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i></a>
+                        }
+                        @if ((_AccountService.CheckUserRoles(6, User.Identity.Name)) ||
+                        (_AccountService.CheckUserRoles(7, User.Identity.Name)) ||
+                        (_AccountService.CheckUserRoles(1002, User.Identity.Name)))
+                        {
+                             <a class="nav-link button-42" href="/DashBoard/Contracts/Announces" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">اعلام بار ها<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                                <div style="height: 12px;"></div>
+                             </a>
+                        }
+                        @if ((_AccountService.CheckUserRoles(1002, User.Identity.Name)))
+                        {
+                             <a class="nav-link button-42" href="/DashBoard/Contracts" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">حواله ها<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                                  <div style="height: 12px;"></div>
+                             </a>
+                        }
+                        @if ((_AccountService.CheckUserRoles(5, User.Identity.Name)))
+                        {
+                             <a class="nav-link button-42" href="/DashBoard/Users/Drivers/PendingUsers" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">تایید رانندگان<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                                  <div style="height: 12px;"></div>
+                             </a>
+                        }
+                        @if ((_AccountService.CheckUserRoles(4, User.Identity.Name)))
+                        {
+                             <a class="nav-link button-42" href="/DashBoard/Users/Contractors/PendingUsers" style="text-align: center;font-family: 'B Nazanin';font-weight: bold;height: 56px;font-size: 20px;">تایید پیمانکاران<i class="fas fa-expand-arrows-alt" style="transform: rotate(80deg) scale(10);opacity: 0.47;"></i>
+                                  <div style="height: 12px;"></div>
+                             </a>
+                        }
+                        </li>
+                </ul>
+            </div>
+        </nav><!-- End: #10 -->

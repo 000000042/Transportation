@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t5btjZrAT2KHGw5dn3UCLnGkYnl9icGmwUuety/8g4M=",
+  "Hash": "RpnLxzcXUvUlWGbubrhXXHqghvGcFw+qM9rdvJ6Nem4=",
   "Source": "Transportation.Web",
   "BasePath": "_content/Transportation.Web",
   "Mode": "Default",
@@ -4913,6 +4913,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Contractors\\FacePictures\\a634677b-3a6b-47b7-9410-84634b407106.jpg",
+      "SourceId": "Transportation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\",
+      "BasePath": "_content/Transportation.Web",
+      "RelativePath": "UserContent/Contractors/FacePictures/a634677b-3a6b-47b7-9410-84634b407106.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UserContent\\Contractors\\FacePictures\\a634677b-3a6b-47b7-9410-84634b407106.jpg"
+    },
+    {
       "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Contractors\\FacePictures\\c17eb89d-532c-4fa8-a246-0293aabcade5.jpg",
       "SourceId": "Transportation.Web",
       "SourceType": "Discovered",
@@ -4945,6 +4962,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\UserContent\\Contractors\\IdentificationCards\\40b74daf-086b-46d6-bdc0-e038892f4451.jpg"
+    },
+    {
+      "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Contractors\\IdentificationCards\\6a7e6997-1568-4554-82c3-c32f292fe0b7.jpg",
+      "SourceId": "Transportation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\",
+      "BasePath": "_content/Transportation.Web",
+      "RelativePath": "UserContent/Contractors/IdentificationCards/6a7e6997-1568-4554-82c3-c32f292fe0b7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UserContent\\Contractors\\IdentificationCards\\6a7e6997-1568-4554-82c3-c32f292fe0b7.jpg"
     },
     {
       "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Contractors\\IdentificationCards\\865947f980a5480c8d12aaf90d469064(2).jpg",
@@ -4981,6 +5015,40 @@
       "OriginalItemSpec": "wwwroot\\UserContent\\Drivers\\FacePictures\\2fcce24c-a4b8-40d8-b669-c18024c8cfda.jpg"
     },
     {
+      "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Drivers\\FacePictures\\5726443e-0e1d-4178-ab9a-b68015682531.jpg",
+      "SourceId": "Transportation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\",
+      "BasePath": "_content/Transportation.Web",
+      "RelativePath": "UserContent/Drivers/FacePictures/5726443e-0e1d-4178-ab9a-b68015682531.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UserContent\\Drivers\\FacePictures\\5726443e-0e1d-4178-ab9a-b68015682531.jpg"
+    },
+    {
+      "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Drivers\\FacePictures\\7f49707e-a599-4b77-904b-df57a4cf7db3.jpg",
+      "SourceId": "Transportation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\",
+      "BasePath": "_content/Transportation.Web",
+      "RelativePath": "UserContent/Drivers/FacePictures/7f49707e-a599-4b77-904b-df57a4cf7db3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UserContent\\Drivers\\FacePictures\\7f49707e-a599-4b77-904b-df57a4cf7db3.jpg"
+    },
+    {
       "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Drivers\\IdentificationCards\\3991b655-e094-4966-a4c4-ec838d095cca.jpg",
       "SourceId": "Transportation.Web",
       "SourceType": "Discovered",
@@ -4996,6 +5064,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\UserContent\\Drivers\\IdentificationCards\\3991b655-e094-4966-a4c4-ec838d095cca.jpg"
+    },
+    {
+      "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Drivers\\IdentificationCards\\6162ccee-11f7-4c51-a829-2b9f5141a73a.jpg",
+      "SourceId": "Transportation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\",
+      "BasePath": "_content/Transportation.Web",
+      "RelativePath": "UserContent/Drivers/IdentificationCards/6162ccee-11f7-4c51-a829-2b9f5141a73a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UserContent\\Drivers\\IdentificationCards\\6162ccee-11f7-4c51-a829-2b9f5141a73a.jpg"
     },
     {
       "Identity": "E:\\C#\\Projects\\TransportationProject\\Transportation.Web\\wwwroot\\UserContent\\Drivers\\IdentificationCards\\865947f980a5480c8d12aaf90d469064(2).jpg",

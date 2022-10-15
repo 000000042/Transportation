@@ -39,5 +39,9 @@ namespace Transportation.Core.Repositories
         int GetUserIdByPhoneNumber(string phoneNumber);
 
         int GetUserIdByUserName(string userName);
+
+        bool CheckUserRoles(int roleId, string userName);
+
+        List<int> GetUserRoles(int userId);
     }
 }

@@ -63,18 +63,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkXFVzZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_AdminScripts.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pblNjcmlwdHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_AdminStyles.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pblN0eWxlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_ApproveContractorPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BcHByb3ZlQ29udHJhY3RvclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -91,6 +79,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9DcmVhdGVEcml2ZXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_DashBoardLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9EYXNoQm9hcmRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_DashBoardScripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9EYXNoQm9hcmRTY3JpcHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_DashBoardStyles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9EYXNoQm9hcmRTdHlsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_LogOutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dPdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -105,6 +105,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_ShowPendingUsersPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TaG93UGVuZGluZ1VzZXJzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_SideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TaWRlQmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Pages/Shared/_UserApproveResult.cshtml]
@@ -137,18 +141,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Account/RegisterDriver.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckRyaXZlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Contract/CreateCargoAnnounce.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RcQ3JlYXRlQ2FyZ29Bbm5vdW5jZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Contract/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Contract/ShowAnnounce.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RcU2hvd0Fubm91bmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/C\#/Projects/TransportationProject/Transportation.Web/Views/Home/Index.cshtml]

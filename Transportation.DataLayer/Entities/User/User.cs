@@ -58,6 +58,12 @@ namespace Transportation.DataLayer.Entities.User
         public DateTime RegisterDate { get; set; }
 
         [Required]
+        public string IdentificationCard { get; set; }
+
+        [Required]
+        public string FacePicture { get; set; }
+
+        [Required]
         public byte[] Salt { get; set; }
 
         public string UserType { get; set; }

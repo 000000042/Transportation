@@ -18,12 +18,6 @@ namespace Transportation.DataLayer.Entities.User
         [Required]
         public int UserId { get; set; }
 
-        [Required]
-        public string IdentificationCard { get; set; }
-
-        [Required]
-        public string FacePicture { get; set; }
-
         #region Navigation Props
 
         [ForeignKey("UserId")]

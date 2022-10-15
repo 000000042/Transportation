@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,25 +28,9 @@ namespace Transportation.Core.Services
 
         bool DeleteUser(int userId);
 
-        bool AddRoleToUser(int userId, int roleId);
-
         User GetUser(int userId);
 
-        bool LoginAdmin(AdminLoginViewModel admin);
-
-        bool IsPasswordCurrect(string userNameOrEmail, string password);
-
-        int GetUserIdByEmail(string email);
-
-        bool CheckUserPermissions(int permissionId, string email);
-
-        void LogOutAdmin();
-
         List<ShowUsersViewModel> GetUsersToShow();
-
-        int CreateDriverUserByAdmin(AddDriverUserViewModel driver);
-
-        int CreateContractorUserByAdmin(AddContractorUserViewModel contractor);
 
         #endregion
     }

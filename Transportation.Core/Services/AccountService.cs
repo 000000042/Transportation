@@ -107,14 +107,14 @@ namespace Transportation.Core.Services
                 IsDelete = false,
                 Salt = salt,
                 UserType = UserTypes.Contractor.ToString(),
-                RegisterDate = DateTime.Now
+                RegisterDate = DateTime.Now,
+                FacePicture = GuidGenerator.GuidGenerate() + Path.GetExtension(register.FacePicture.FileName),
+                IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.IdentificationCard.FileName),
             };
             int userId = _accountRepository.AddUser(user);
 
             Contractor contractor = new Contractor()
             {
-                FacePicture = GuidGenerator.GuidGenerate() + Path.GetExtension(register.FacePicture.FileName),
-                IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.IdentificationCard.FileName),
                 UserId = userId
             };
 
@@ -133,13 +133,13 @@ namespace Transportation.Core.Services
                 "UserContent",
                 "Contractors",
                 "IdentificationCards",
-                contractor.IdentificationCard);
+                user.IdentificationCard);
 
             string facePictureFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
                 "UserContent",
                 "Contractors",
                 "FacePictures",
-                contractor.FacePicture);
+                user.FacePicture);
 
             using (var stream = new FileStream(cardFilePath, FileMode.Create))
             {
@@ -181,7 +181,9 @@ namespace Transportation.Core.Services
                 IsDelete = false,
                 Salt = salt,
                 UserType = UserTypes.Driver.ToString(),
-                RegisterDate = DateTime.Now
+                RegisterDate = DateTime.Now,
+                IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.IdentificationCard.FileName),
+                FacePicture = GuidGenerator.GuidGenerate() + Path.GetExtension(register.FacePicture.FileName)
             };
             int userId = _accountRepository.AddUser(user);
 
@@ -189,8 +191,6 @@ namespace Transportation.Core.Services
             {
                 TruckFleetCode = register.TruckFleetCode,
                 SmartDriverCode = register.SmartDriverCode,
-                IdentificationCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.IdentificationCard.FileName),
-                FacePicture = GuidGenerator.GuidGenerate() + Path.GetExtension(register.FacePicture.FileName),
                 SmartDriverCard = GuidGenerator.GuidGenerate() + Path.GetExtension(register.SmartDriverCard.FileName),
                 UserId = userId
             };
@@ -220,13 +220,13 @@ namespace Transportation.Core.Services
                 "UserContent",
                 "Drivers",
                 "IdentificationCards",
-                driver.IdentificationCard);
+                user.IdentificationCard);
 
             string facePictureFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
                 "UserContent",
                 "Drivers",
                 "FacePictures",
-                driver.FacePicture);
+                user.FacePicture);
 
             string smartDriverCardPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
                 "UserContent",
@@ -288,6 +288,11 @@ namespace Transportation.Core.Services
         public int GetAdminIdByUserName(string userName)
         {
             return _accountRepository.GetAdminIdByUserName(userName);
+        }
+
+        public bool CheckUserRoles(int roleId, string userName)
+        {
+            return _accountRepository.CheckUserRoles(roleId, userName);
         }
     }
 }

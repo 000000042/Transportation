@@ -93,7 +93,7 @@ namespace Transportation.Core.Repositories
 
         public bool CheckUserPermissions(int permissionId, string userName)
         {
-            int userId = _context.Users.SingleOrDefault(u => u.UserName == userName).UserId;
+            int userId = GetUserIdByUserName(userName);
 
             List<int> UserRoles = _context.UserRoles.Where(u => u.UserId == userId)
                 .Select(r => r.RoleId).ToList();
@@ -153,6 +153,21 @@ namespace Transportation.Core.Repositories
         public int GetUserIdByUserName(string userName)
         {
             return _context.Users.SingleOrDefault(u => u.UserName == userName).UserId;
+        }
+
+        public bool CheckUserRoles(int roleId, string userName)
+        {
+            int userId = GetUserIdByUserName(userName);
+
+            List<int> UserRoles = GetUserRoles(userId);
+
+            return UserRoles.Any(r => r == roleId);
+        }
+
+        public List<int> GetUserRoles(int userId)
+        {
+            return _context.UserRoles.Where(u => u.UserId == userId)
+                .Select(r => r.RoleId).ToList();
         }
     }
 }
