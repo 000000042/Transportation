@@ -231,7 +231,7 @@ namespace Transportation.Core.Services
             string smartDriverCardPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
                 "UserContent",
                 "Drivers",
-                "FacePictures",
+                "SmartDriverCards",
                 driver.SmartDriverCard);
 
             using (var stream = new FileStream(cardFilePath, FileMode.Create))

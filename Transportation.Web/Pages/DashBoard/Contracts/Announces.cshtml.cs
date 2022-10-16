@@ -6,10 +6,7 @@ using Transportation.Core.Services;
 
 namespace Transportation.Web.Pages.DashBoard.Contracts
 {
-    [PermissionChecker(1)]
-    [PermissionChecker(17)]
-    [PermissionChecker(18)]
-    [PermissionChecker(1002)]
+    [PermissionChecker(1, 17, 18, 1002)]
     public class AnnouncesModel : PageModel
     {
         private IContractService _contractService;

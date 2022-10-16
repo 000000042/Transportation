@@ -62,7 +62,7 @@ function Approve(id){
             var url = "https://localhost:44341/DashBoard/Users/Contractors/ApproveUser/" + id;
              console.log(url);
                   $('#modalBody').load(url,function(){
-                 $('#exampleModalCenter').modal('toggle');
+                     $('#exampleModal').modal('toggle');
                  });
     document.getElementById("exampleModalLabel").innerHTML = "راننده شماره " + id;
 }

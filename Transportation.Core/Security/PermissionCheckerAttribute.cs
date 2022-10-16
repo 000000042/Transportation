@@ -12,10 +12,10 @@ namespace Transportation.Core.Security
 {
     public class PermissionCheckerAttribute : AuthorizeAttribute, IAuthorizationFilter
     {
-        private int _permissionId = 0;
+        private int[] _permissionId;
         private IAccountService _accountService;
 
-        public PermissionCheckerAttribute(int permissionId)
+        public PermissionCheckerAttribute(params int[] permissionId)
         {
             _permissionId = permissionId;
         }
@@ -28,8 +28,20 @@ namespace Transportation.Core.Security
                     (IAccountService)context.HttpContext.RequestServices.GetService(typeof(IAccountService));
 
                 string userName = context.HttpContext.User.Identity.Name;
+                bool isExistPermission = false;
+                foreach (var permission in _permissionId)
+                {
+                    if (!_accountService.CheckUserPermissions(permission, userName))
+                    {
+                        isExistPermission = false;
+                    }
+                    else
+                    {
+                        isExistPermission = true;
+                    }
+                }
 
-                if (!_accountService.CheckUserPermissions(_permissionId, userName))
+                if (!isExistPermission)
                 {
                     context.Result = new RedirectResult("/");
                 }

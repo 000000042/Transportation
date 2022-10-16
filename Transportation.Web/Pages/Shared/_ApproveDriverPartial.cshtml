@@ -16,12 +16,42 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>نام کاربری</td>
-                    <td>@Model.User.UserName</td>
+                    <td>تصویر چهره</td>
+                    <td>
+                        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Drivers/FacePictures/@Model.User.FacePicture" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>تصویر کارت ملی</td>
+                    <td>
+                        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Drivers/IdentificationCards/@Model.User.IdentificationCard" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>تصویر کارت ملی</td>
+                    <td>
+                        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Drivers/SmartDriverCards/@Model.User.IdentificationCard" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>نام</td>
+                    <td>@Model.User.FirstName</td>
+                </tr>
+                <tr>
+                    <td>نام خانوادگی</td>
+                    <td>@Model.User.LastName</td>
+                </tr>
+                <tr>
+                    <td>شماره تلفن</td>
+                    <td>@Model.User.PhoneNumber</td>
                 </tr>
                 <tr>
                     <td>ایمیل</td>
                     <td>@Model.User.Email</td>
+                </tr>
+                <tr>
+                    <td>کد ملی</td>
+                    <td>@Model.User.NationalCode</td>
                 </tr>
                 <tr>
                     <td>کد هوشمند راننده</td>

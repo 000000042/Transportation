@@ -2,8 +2,8 @@
 
 <div class="col-md-12">
     <div class="row">
-        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Contractors/IdentificationCards/@Model.User.IdentificationCard" />
-        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Contractors/FacePictures/@Model.User .FacePicture" />
+        
+       
     </div>
     <div>
         <input type="hidden" asp-for="UserId" />
@@ -16,12 +16,36 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>نام کاربری</td>
-                    <td>@Model.User.UserName</td>
+                    <td>تصویر چهره</td>
+                    <td>
+                        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Contractors/FacePictures/@Model.User.FacePicture" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>تصویر کارت ملی</td>
+                    <td>
+                        <img class="img-thumbnail" style="max-width:100px" src="~/UserContent/Contractors/IdentificationCards/@Model.User.IdentificationCard" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>نام</td>
+                    <td>@Model.User.FirstName</td>
+                </tr>
+                <tr>
+                    <td>نام خانوادگی</td>
+                    <td>@Model.User.LastName</td>
+                </tr>
+                <tr>
+                    <td>شماره تلفن</td>
+                    <td>@Model.User.PhoneNumber</td>
                 </tr>
                 <tr>
                     <td>ایمیل</td>
                     <td>@Model.User.Email</td>
+                </tr>
+                <tr>
+                    <td>کد ملی</td>
+                    <td>@Model.User.NationalCode</td>
                 </tr>
             </tbody>
         </table>
