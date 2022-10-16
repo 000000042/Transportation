@@ -16,10 +16,13 @@ namespace Transportation.Web.Pages.Admin.Users.Drivers
             _adminService = adminService;
         }
 
-        public List<ShowUsersViewModel> Users { get; set; }
+        public List<ShowDriversViewModel> Users { get; set; }
         public void OnGet()
         {
             Users = _adminService.GetPendingDrivers();
+
+            if (!Users.Any())
+                ViewData["IsExistDrivers"] = false;
         }
     }
 }

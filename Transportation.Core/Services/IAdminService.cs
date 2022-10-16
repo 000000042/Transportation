@@ -12,13 +12,13 @@ namespace Transportation.Core.Services
     {
         #region User
 
-        List<ShowUsersViewModel> GetDriversToShow();
+        List<ShowDriversViewModel> GetDriversToShow();
 
-        List<ShowUsersViewModel> GetContractorsToShow();
+        List<ShowContractorsViewModel> GetContractorsToShow();
 
-        List<ShowUsersViewModel> GetPendingDrivers();
+        List<ShowDriversViewModel> GetPendingDrivers();
 
-        List<ShowUsersViewModel> GetPendingContractors();
+        List<ShowContractorsViewModel> GetPendingContractors();
 
         bool ActiveUser(int userId);
 
@@ -29,8 +29,6 @@ namespace Transportation.Core.Services
         bool DeleteUser(int userId);
 
         User GetUser(int userId);
-
-        List<ShowUsersViewModel> GetUsersToShow();
 
         #endregion
     }

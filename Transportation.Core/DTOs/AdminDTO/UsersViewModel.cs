@@ -9,7 +9,7 @@ using Transportation.Core.Enums.UserEnums;
 
 namespace Transportation.Core.DTOs.AdminDTO
 {
-    public class ShowUsersViewModel
+    public class ShowDriversViewModel
     {
         public int UserId { get; set; }
 
@@ -18,17 +18,60 @@ namespace Transportation.Core.DTOs.AdminDTO
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string UserName { get; set; }
 
-        [Display(Name = "ایمیل")]
+        [Display(Name = "شماره تلفن")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        [EmailAddress(ErrorMessage = "ایمیل وارد شده معتبر نمی باشد")]
-        public string Email { get; set; }
+        [MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "کد ملی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string NationalCode { get; set; }
 
         [Display(Name = "تاریخ ثبت نام")]
         public DateTime RegisterDate { get; set; }
 
-        [Display(Name = "نوع کاربری")]
-        public string UserType { get; set; }
+        [Display(Name = "تصویر چهره")]
+        public string FacePicture { get; set; }
+
+        [Required]
+        [Display(Name = "تصویر کارت ملی")]
+        public string IdentificationCard { get; set; }
+
+        [Display(Name = "تصویر کارت هوشمند")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string SmartDriverCard { get; set; }
+    }
+
+    public class ShowContractorsViewModel
+    {
+        public int UserId { get; set; }
+
+        [Display(Name = "نام کاربری")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string UserName { get; set; }
+
+        [Display(Name = "شماره تلفن")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "کد ملی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string NationalCode { get; set; }
+
+        [Display(Name = "تاریخ ثبت نام")]
+        public DateTime RegisterDate { get; set; }
+
+        [Display(Name = "تصویر چهره")]
+        public string FacePicture { get; set; }
+
+        [Required]
+        [Display(Name = "تصویر کارت ملی")]
+        public string IdentificationCard { get; set; }
     }
 
     public class AdminLoginViewModel

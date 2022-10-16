@@ -16,10 +16,13 @@ namespace Transportation.Web.Pages.Admin.Users.Contractors
             _adminService = adminService;
         }
 
-        public List<ShowUsersViewModel> Users { get; set; }
+        public List<ShowContractorsViewModel> Users { get; set; }
         public void OnGet()
         {
             Users = _adminService.GetPendingContractors();
+
+            if (!Users.Any())
+                ViewData["IsExistContractors"] = false;
         }
     }
 }

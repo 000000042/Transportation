@@ -26,7 +26,9 @@ namespace Transportation.DataLayer.Entities.User
         [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string TruckFleetCode { get; set; }
 
-        [Required]
+        [Display(Name = "تصویر کارت هوشمند")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string SmartDriverCard { get; set; }
 
         #region Navigation Props

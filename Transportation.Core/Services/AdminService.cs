@@ -64,21 +64,23 @@ namespace Transportation.Core.Services
             return true;
         }
 
-        public List<ShowUsersViewModel> GetContractorsToShow()
+        public List<ShowContractorsViewModel> GetContractorsToShow()
         {
-            List<Contractor> companies = _adminRepository.GetContractorsForShow();
-            List<ShowUsersViewModel> companyUsers = companies
+            List<Contractor> contractors = _adminRepository.GetContractorsForShow();
+            List<ShowContractorsViewModel> contractorUsers = contractors
                 .Where(c => c.User.IsActive == true)
-                .Select(c => new ShowUsersViewModel
+                .Select(c => new ShowContractorsViewModel
                 {
                     UserName = c.User.UserName,
-                    Email = c.User.Email,
                     RegisterDate = c.User.RegisterDate,
                     UserId = c.UserId,
-                    UserType = UserTypes.Contractor.ToString()
+                    FacePicture = c.User.FacePicture,
+                    IdentificationCard = c.User.IdentificationCard,
+                    NationalCode = c.User.NationalCode,
+                    PhoneNumber = c.User.PhoneNumber
                 }).ToList();
 
-            return companyUsers;
+            return contractorUsers;
         }
 
         public Contractor GetContractor(int userId)
@@ -91,52 +93,60 @@ namespace Transportation.Core.Services
             return _adminRepository.GetDriver(userId);
         }
 
-        public List<ShowUsersViewModel> GetDriversToShow()
+        public List<ShowDriversViewModel> GetDriversToShow()
         {
             List<Driver> drivers = _adminRepository.GetDriversForShow();
-            List<ShowUsersViewModel> driverUsers = drivers
-                .Where(c => c.User.IsActive == true)
-                .Select(c => new ShowUsersViewModel
+            List<ShowDriversViewModel> driverUsers = drivers
+                .Where(d => d.User.IsActive == true)
+                .Select(d => new ShowDriversViewModel
                 {
-                    UserName = c.User.UserName,
-                    Email = c.User.Email,
-                    RegisterDate = c.User.RegisterDate,
-                    UserId = c.UserId,
-                    UserType = UserTypes.Contractor.ToString()
+                    UserName = d.User.UserName,
+                    RegisterDate = d.User.RegisterDate,
+                    UserId = d.UserId,
+                    FacePicture = d.User.FacePicture,
+                    IdentificationCard = d.User.IdentificationCard,
+                    NationalCode = d.User.NationalCode,
+                    PhoneNumber = d.User.PhoneNumber,
+                    SmartDriverCard = d.SmartDriverCard
                 }).ToList();
 
             return driverUsers;
         }
 
-        public List<ShowUsersViewModel> GetPendingContractors()
+        public List<ShowContractorsViewModel> GetPendingContractors()
         {
             List<Contractor> contractors = _adminRepository.GetContractorsForShow();
-            List<ShowUsersViewModel> contractorUsers = contractors
+            List<ShowContractorsViewModel> contractorUsers = contractors
                 .Where(c => c.User.IsActive == false)
-                .Select(c => new ShowUsersViewModel
+                .Select(c => new ShowContractorsViewModel
                 {
                     UserName = c.User.UserName,
-                    Email = c.User.Email,
                     RegisterDate = c.User.RegisterDate,
                     UserId = c.UserId,
-                    UserType = UserTypes.Contractor.ToString()
+                    FacePicture = c.User.FacePicture,
+                    IdentificationCard = c.User.IdentificationCard,
+                    NationalCode = c.User.NationalCode,
+                    PhoneNumber = c.User.PhoneNumber
                 }).ToList();
 
             return contractorUsers;
         }
 
-        public List<ShowUsersViewModel> GetPendingDrivers()
+        public List<ShowDriversViewModel> GetPendingDrivers()
         {
             List<Driver> drivers = _adminRepository.GetDriversForShow();
-            List<ShowUsersViewModel> driverUsers = drivers
+            List<ShowDriversViewModel> driverUsers = drivers
                 .Where(d => !d.User.IsActive && !d.User.IsDelete)
-                .Select(d => new ShowUsersViewModel
+                .Select(d => new ShowDriversViewModel
                 {
                     UserName = d.User.UserName,
-                    Email = d.User.Email,
                     RegisterDate = d.User.RegisterDate,
                     UserId = d.UserId,
-                    UserType = UserTypes.Driver.ToString()
+                    FacePicture = d.User.FacePicture,
+                    IdentificationCard = d.User.IdentificationCard,
+                    NationalCode = d.User.NationalCode,
+                    PhoneNumber = d.User.PhoneNumber,
+                    SmartDriverCard = d.SmartDriverCard
                 }).ToList();
 
             return driverUsers;
@@ -145,19 +155,6 @@ namespace Transportation.Core.Services
         public User GetUser(int userId)
         {
             return _adminRepository.GetUser(userId);
-        }
-
-        public List<ShowUsersViewModel> GetUsersToShow()
-        {
-            return _adminRepository.GetAllUsers()
-                .Select(u => new ShowUsersViewModel()
-                {
-                    UserId = u.UserId,
-                    UserName = u.UserName,
-                    Email = u.Email,
-                    RegisterDate = u.RegisterDate,
-                    UserType = u.UserType
-                }).ToList();
         }
     }
 }
