@@ -76,7 +76,9 @@
     <Folder Include="wwwroot\AdminContent\Contracts\NewFolder\" />
     <Folder Include="wwwroot\UserContent\Admins\FacePictures\" />
     <Folder Include="wwwroot\UserContent\Admins\IdentificationCards\" />
-    <Folder Include="wwwroot\UserContent\Drivers\FacePictures\" />
+    <Folder Include="wwwroot\UserContent\Admins\thumb\" />
+    <Folder Include="wwwroot\UserContent\Contractors\thumb\" />
+    <Folder Include="wwwroot\UserContent\Drivers\thumb\" />
     <Folder Include="wwwroot\UserContent\Drivers\SmartDriverCards\" />
   </ItemGroup>
 

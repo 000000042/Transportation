@@ -2688,6 +2688,7 @@
           "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.Extensions.Identity.Core": "6.0.9",
+          "System.Drawing.Common": "6.0.0",
           "Transportation.DataLayer": "1.0.0"
         },
         "runtime": {

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using Transportation.Core.Conventors;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -15,6 +16,7 @@ using Transportation.Core.Generators;
 using Transportation.Core.Repositories;
 using Transportation.Core.Security;
 using Transportation.DataLayer.Entities.User;
+using Transportation.Core.Convertors;
 
 namespace Transportation.Core.Services
 {
@@ -151,6 +153,26 @@ namespace Transportation.Core.Services
                 register.FacePicture.CopyTo(stream);
             }
 
+            string cardResizeOutputPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
+                "UserContent",
+                "Contractors",
+                "thumb",
+                user.IdentificationCard);
+
+            string facePicResizeOutputPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
+                "UserContent",
+                "Contractors",
+                "thumb",
+                user.FacePicture);
+
+            ImgConvertor convertor = new ImgConvertor();
+
+            // IdentificationCard Resize
+            convertor.Image_resize(cardFilePath, cardResizeOutputPath, 80);
+
+            // FacePicture Resize
+            convertor.Image_resize(facePictureFilePath, facePicResizeOutputPath, 80);
+
             return userId;
         }
 
@@ -248,6 +270,35 @@ namespace Transportation.Core.Services
             {
                 register.SmartDriverCard.CopyTo(stream);
             }
+
+            string cardResizeOutputPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
+                "UserContent",
+                "Drivers",
+                "thumb",
+                user.IdentificationCard);
+
+            string facePicResizeOutputPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
+                "UserContent",
+                "Drivers",
+                "thumb",
+                user.FacePicture);
+
+            string smartCardResizeOutputPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
+                "UserContent",
+                "Drivers",
+                "thumb",
+                driver.SmartDriverCard);
+
+            ImgConvertor convertor = new ImgConvertor();
+
+            // IdentificationCard Resize
+            convertor.Image_resize(cardFilePath, cardResizeOutputPath, 80);
+
+            // FacePicture Resize
+            convertor.Image_resize(facePictureFilePath, facePicResizeOutputPath, 80);
+
+            // SmartDriverCard Resize
+            convertor.Image_resize(smartDriverCardPath, smartCardResizeOutputPath, 80);
 
             return userId;
         }

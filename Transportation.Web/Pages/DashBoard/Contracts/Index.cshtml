@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "حواله ها";
 }
+<h1>
+    لیست حواله های ثبت شده
+</h1>
+<hr />
 
 <div class="row">
                         <div class="col">
@@ -15,50 +19,60 @@
                                         </div>
                                     </div>
                                 </div>
-                                <table class="table table-striped table-bordered table-hover dataTable no-footer">
-                                <thead>
-                                    <tr>
-                                        <th>شماره حواله</th>
-                                        <th>تاریخ ثبت</th>
-                                        <th>صافی (ریال)</th>
-                                        <th>نوع بار</th>
-                                        <th>حواله دریافتی (ریال)</th>
-                                        <th>محول</th>
-                                        <th>مبدا</th>
-                                        <th>مقصد</th>
-                                        <th>دستورات</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach (var contract in Model.Contracts)
+                                @if (ViewData["IsExistContracts"] != null)
                                 {
-                                                <tr>
-                                                   <input type="hidden" value="@contract.DeleteDate" id="valueElement" />
-                                                   <td>@contract.ContractId</td>
-                                                   <td>@contract.SignDate.PersianDateTime()</td>
-                                                       <td>@contract.DriverFee.ToString("#,0")</td>
-                                                   <td>@contract.CargoType</td>
-                                                   <td>@contract.RecievedRemittance.ToString("#,0")</td>
-                                                   <td>@contract.UserName</td>
-                                                   <td>@contract.Beginning</td>
-                                                   <td>@contract.Destination</td>
-                                                   <td>
-                                                           <div class="col-xl-1">
-                                                              <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="background: rgb(145,36,12);"><i class="far fa-sun"></i></button>
-                                                                <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#" style="text-align: center;background: rgb(71,13,0);border-top-left-radius: 42px;height: 11.3906px;border-top-right-radius: 42px;">&nbsp;</a>
-                                                        <a class="dropdown-item button-24" href="#" style="text-align: center;font-family: 'B Nazanin';background: rgb(210,13,0);color: rgb(255,255,255);font-weight: bold;">ابطال حواله</a>
-                                                            <a class="dropdown-item button-24" href="#" style="font-weight: bold;text-align: center;font-family: 'B Nazanin';background: rgb(234,90,29);">چاپ حواله</a>
-                                                        <a class="dropdown-item button-24" id="showTime" href="#" style="font-weight: bold;text-align: center;font-family: 'B Nazanin';background: rgb(0,0,0);">cd.timer</a>
-                                                        <a class="dropdown-item" href="#" style="text-align: center;background: rgb(71,13,0);height: 10.3906px;border-bottom-right-radius: 42px;border-bottom-left-radius: 42px;"><br></a>
-                                                         </div>
-                                                         </div>
-                                                       </div>
-                                                   </td>
-                                                </tr>
+                                    <div class="alert alert-warning">
+                                        !تاکنون حواله ای ثبت نشده است
+                                    </div>
                                 }
-                                </tbody>
+                                else 
+                                {
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer">
+                                    <thead>
+                                        <tr>
+                                            <th>شماره حواله</th>
+                                            <th>تاریخ ثبت</th>
+                                            <th>صافی (ریال)</th>
+                                            <th>نوع بار</th>
+                                            <th>حواله دریافتی (ریال)</th>
+                                            <th>محول</th>
+                                            <th>مبدا</th>
+                                            <th>مقصد</th>
+                                            <th>دستورات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach (var contract in Model.Contracts)
+                                    {
+                                                    <tr>
+                                                       <input type="hidden" value="@contract.DeleteDate" id="valueElement" />
+                                                       <td>@contract.ContractId</td>
+                                                       <td>@contract.SignDate.PersianDateTime()</td>
+                                                           <td>@contract.DriverFee.ToString("#,0")</td>
+                                                       <td>@contract.CargoType</td>
+                                                       <td>@contract.RecievedRemittance.ToString("#,0")</td>
+                                                       <td>@contract.UserName</td>
+                                                       <td>@contract.Beginning</td>
+                                                       <td>@contract.Destination</td>
+                                                       <td>
+                                                               <div class="col-xl-1">
+                                                                  <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="background: rgb(145,36,12);"><i class="far fa-sun"></i></button>
+                                                                    <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#" style="text-align: center;background: rgb(71,13,0);border-top-left-radius: 42px;height: 11.3906px;border-top-right-radius: 42px;">&nbsp;</a>
+                                                            <a class="dropdown-item button-24" href="#" style="text-align: center;font-family: 'B Nazanin';background: rgb(210,13,0);color: rgb(255,255,255);font-weight: bold;">ابطال حواله</a>
+                                                                <a class="dropdown-item button-24" href="#" style="font-weight: bold;text-align: center;font-family: 'B Nazanin';background: rgb(234,90,29);">چاپ حواله</a>
+                                                            <a class="dropdown-item button-24" id="showTime" href="#" style="font-weight: bold;text-align: center;font-family: 'B Nazanin';background: rgb(0,0,0);">cd.timer</a>
+                                                            <a class="dropdown-item" href="#" style="text-align: center;background: rgb(71,13,0);height: 10.3906px;border-bottom-right-radius: 42px;border-bottom-left-radius: 42px;"><br></a>
+                                                             </div>
+                                                             </div>
+                                                           </div>
+                                                       </td>
+                                                    </tr>
+                                    }
+                                    </tbody>
                                 </table>
+                                }
+                                
                             </div>
                         </div>
                     </div>

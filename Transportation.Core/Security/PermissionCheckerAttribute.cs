@@ -38,6 +38,7 @@ namespace Transportation.Core.Security
                     else
                     {
                         isExistPermission = true;
+                        break;
                     }
                 }
 

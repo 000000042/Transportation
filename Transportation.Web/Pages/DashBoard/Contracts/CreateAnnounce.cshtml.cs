@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,6 +8,7 @@ using Transportation.Core.Services;
 
 namespace Transportation.Web.Pages.DashBoard.Contracts
 {
+    [Authorize]
     [PermissionChecker(20)]
     public class CreateAnnounceModel : PageModel
     {

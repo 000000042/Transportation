@@ -30,9 +30,6 @@
                                 <table class="table table-striped table-bordered table-hover dataTable no-footer">
                                     <thead>
                                         <tr>
-                                            <th>تصویر چهره</th>
-                                            <th>تصویر کارت ملی</th>
-                                            <th>تصویر کارت هوشمند</th>
                                             <th>تاریخ ثبت</th>
                                             <th>نام و نام خانوادگی</th>
                                             <th>شماره تماس</th>
@@ -44,15 +41,6 @@
                                         @foreach(var user in Model.Users)
                                         {
                                             <tr>
-                                                <td>
-                                                    <img src="~/UserContent/Drivers/FacePictures/@user.FacePicture">
-                                                </td>
-                                                <td>
-                                                     <img src="~/UserContent/Drivers/IdentificationCards/@user.IdentificationCard">
-                                                </td>
-                                                <td>
-                                                     <img src="~/UserContent/Drivers/SmartDriverCards/@user.SmartDriverCard">
-                                                </td>
                                                 <td>
                                                     @user.RegisterDate.PersianDateTime()
                                                 </td>

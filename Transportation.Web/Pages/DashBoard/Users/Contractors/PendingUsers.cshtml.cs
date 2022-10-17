@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Transportation.Core.DTOs.AdminDTO;
@@ -6,6 +7,7 @@ using Transportation.Core.Services;
 
 namespace Transportation.Web.Pages.Admin.Users.Contractors
 {
+    [Authorize]
     [PermissionChecker(4)]
     public class PendingUsersModel : PageModel
     {

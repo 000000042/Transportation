@@ -10,6 +10,8 @@ using Transportation.DataLayer.Entities.User;
 
 namespace Transportation.Web.Pages.Admin.Users.Drivers
 {
+    [Authorize]
+    [PermissionChecker(12)]
     public class ApproveUserModel : PageModel
     {
         private IAdminService _adminService;

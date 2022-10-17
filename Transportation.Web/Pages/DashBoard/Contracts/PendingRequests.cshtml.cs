@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Transportation.Core.DTOs.ContractDTO;
@@ -7,6 +8,7 @@ using Transportation.DataLayer.Entities.Contract;
 
 namespace Transportation.Web.Pages.DashBoard.Contracts
 {
+    [Authorize]
     [PermissionChecker(1006)]
     public class PendingRequestsModel : PageModel
     {
@@ -41,8 +43,7 @@ namespace Transportation.Web.Pages.DashBoard.Contracts
             if (contractId == 0)
                 return NotFound();
 
-            ViewData["IsSuccess"] = true;
-            return Page();
+            return Redirect("/DashBoard/Contracts/Announces");
         }
 
         public IActionResult OnGetDeclineOffer(int requestId)

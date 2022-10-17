@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Transportation.Core.Conventors;
 using Transportation.Core.Security;
@@ -8,6 +9,7 @@ using Transportation.DataLayer.Entities.User;
 
 namespace Transportation.Web.Pages.Admin.Users.Contractors
 {
+    [Authorize]
     [PermissionChecker(16)]
     public class ApproveUserModel : PageModel
     {

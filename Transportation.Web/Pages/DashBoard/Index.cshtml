@@ -7,7 +7,7 @@
 <div class="container-fluid">
                         <div class="d-sm-flex justify-content-between align-items-center mb-4">
                             <h3 class="text-dark mb-0">داشبورد</h3>
-                            @if (_AccountService.CheckUserPermissions(20, User.Identity.Name))
+                            @if (_AccountService.CheckUserRoles(6, User.Identity.Name))
                             {
                                 <div>
                                     <a class="btn btn-primary" style="background: rgb(240,129,36);" href="/DashBoard/Contracts/CreateAnnounce">اعلام بار جدید</a>

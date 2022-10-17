@@ -10,22 +10,22 @@
         <div class="container">
             <img class="img-fluid bg-light border rounded-pill border-0 shadow-lg rounded about-heading-img mb-3 mb-lg-0" src="/assets/img/EasyLayer.ir-IR-Flag-3D-Free-scaled.jpg?h=3ecf91bbefd3ab7314af2bb2d16721c5">
             <div class="about-heading-content">
-                    @if (ViewBag.IsSuccess != null)
-                        {
-                            <div class="alert alert-success">
-                                <p class="help-block">ورود شما با موفقیت انجام شد.</p>
-                            </div>
-
-        
-                            <script>
-                                var delay = 3000;
-                                    setTimeout(function () { window.location = "https://localhost:44341/DashBoard"; }, delay);
-                            </script>
-                        }
                 <form method="post">
                 <div class="row">
                     <div class="col-lg-10 col-xl-9 mx-auto">
                         <h2 class="section-heading mb-4"></h2>
+                        @if (ViewBag.IsSuccess != null)
+                        {
+                                <div class="alert alert-success">
+                                    <p class="help-block">ورود شما با موفقیت انجام شد.</p>
+                                </div>
+
+
+                                <script>
+                                    var delay = 3000;
+                                        setTimeout(function () { window.location = "https://localhost:44341/DashBoard"; }, delay);
+                                </script>
+                        }
                         <div class="bg-faded rounded p-5">
                             <span class="section-heading-lower" style="text-align: center;font-family: 'B Nazanin';font-size: 33px;height: 65.5938px;font-weight: bold;font-style: italic;">ورود به پنل کاربری</span>
                             <div class="form-group">

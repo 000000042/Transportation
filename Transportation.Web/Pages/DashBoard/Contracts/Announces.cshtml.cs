@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Transportation.Core.DTOs.ContractDTO;
@@ -6,6 +7,7 @@ using Transportation.Core.Services;
 
 namespace Transportation.Web.Pages.DashBoard.Contracts
 {
+    [Authorize]
     [PermissionChecker(1, 17, 18, 1002)]
     public class AnnouncesModel : PageModel
     {
@@ -20,6 +22,9 @@ namespace Transportation.Web.Pages.DashBoard.Contracts
         public void OnGet()
         {
             Announces = _contractService.GetAnnouncesToShow();
+
+            if (!Announces.Any())
+                ViewData["IsExistAnnounces"] = false;
         }
     }
 }
